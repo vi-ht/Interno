@@ -1,0 +1,736 @@
+@import "variable.scss";
+@import "layout.scss";
+@import "font.scss";
+* {
+    @include ResetCSS;
+}
+%button {
+    font-family: $Jost-SemiBold;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 18px;
+    padding: 22px 49px;
+    background-color: $primary-color-dark;
+    color: $neutral-color-white;
+    font-size: 18px;
+    font-style: bold;
+    line-height: 125%;
+    box-shadow: 0px 10px 20px 0px #c0c0c059;
+    @include SetUpFlexLayout(row, nowrap, 8px, center, center);
+    position: relative;
+    span:nth-child(2) {
+        color: $primary-color-med;
+        @include CenterLayout;
+    }
+}
+%heading {
+    font-family: $DMSerif-r;
+    font-size: 85px;
+    line-height: 125%;
+    letter-spacing: 2%;
+}
+%heading01 {
+    font-family: $DMSerif-r;
+    font-size: 50px;
+    line-height: 125%;
+    letter-spacing: 2%;
+}
+%heading03 {
+    font-family: $DMSerif-r;
+    font-size: 25px;
+    line-height: 125%;
+    letter-spacing: 2%;
+}
+%heading04 {
+    font-family: $DMSerif-r;
+    font-size: 22px;
+    line-height: 125%;
+    letter-spacing: 2%;
+}
+%regular-text25 {
+    font-family: $Jost-regular;
+    font-size: 25px;
+    line-height: 150%;
+}
+%regular-text {
+    font-family: $Jost-regular;
+    font-size: 22px;
+    line-height: 150%;
+}
+%regular-text16 {
+    font-family: $Jost-regular;
+    font-size: 16px;
+    line-height: 150%;
+}
+// Header
+header {
+    @include FullScreenLayout(138px);
+    padding-top: 43px;
+    padding-bottom: 43px;
+    div {
+        @include StandardLayout($normal-width, 50px, transparent);
+        @include SetUpFlexLayout(row, nowrap, 0, space-between, center);
+        nav {
+            @include SetUpFlexLayout(row, nowrap, 40px, flex-end, center);
+            a {
+                text-decoration: none;
+                color: $primary-color-dark;
+                font-size: 20px;
+                font-family: Jost-regular;
+            }
+        }
+    }
+}
+// Banner
+#banner {
+    @include ImageFullScreenLayout(url(../asset/image/Image.png), 1042px);
+    border-bottom-left-radius: 291px;
+    #main-banner {
+        @include StandardLayout($normal-width, auto, transparent);
+        @include CenterLayout;
+        justify-content: flex-start;
+        #banner-content {
+            font-family: $DMSerif-r;
+            max-width: 434px;
+            div {
+                font-family: inherit;
+                color: $primary-color-dark;
+                font-size: 65px;
+                line-height: 125%;
+                margin-bottom: 9px;
+            }
+            p {
+                font-family: $Jost-regular;
+                color: $primary-color-dark;
+                font-size: 22px;
+                line-height: 150%;
+                margin-bottom: 21px;
+            }
+            button {
+                @extend %button;
+            }
+        }
+    }
+}
+//work
+#work {
+    @include FullScreenLayout(764px);
+    @include CenterLayout;
+    #work-container {
+        @include StandardLayout($normal-width, 225px, transparent);
+        @include SetUpFlexLayout(row, nowrap, 52px, center, stretch);
+        div {
+            text-align: center;
+            flex-grow: 1;
+        }
+        div.work-name {
+            font-family: $DMSerif-r;
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+        div.work-des {
+            font-family: $Jost-regular;
+            line-height: 150%;
+            font-size: 22px;
+            margin-bottom: 48px;
+        }
+        div.work-read-more {
+            @include CenterLayout;
+            @include SetUpFlexLayout(row, nowrap, 8px, center, center);
+            font-family: $Jost-SemiBold;
+            font-size: 18px;
+            span:nth-child(2) {
+                color: $primary-color-med;
+                @include CenterLayout;
+            }
+        }
+    }
+}
+// about us
+#aboutUS-container {
+    @include FullScreenLayout(700px);
+    @include CenterLayout;
+    margin-bottom: 200px;
+    #aboutUS {
+        @include StandardLayout($normal-width, 100%, transparent);
+        @include SetUpFlexLayout(row, nowrap, 75px, space-between, center);
+        @include CenterLayout;
+        #aboutUS-content {
+            @include StandardLayout(472px, 614px, transparent);
+            #content-title {
+                @extend %heading01;
+                margin-bottom: 33px;
+                max-width: 420px;
+            }
+            #content-des {
+                @extend %regular-text;
+                margin-bottom: 45px;
+            }
+            #content-info {
+                @include SetUpFlexLayout(row, nowrap, 15px, flex-start, center);
+                margin-bottom: 47px;
+                #info-icon {
+                    @include StandardLayout(93px, 93px, $primary-color-light);
+                    border-radius: 50%;
+                    @include CenterLayout;
+                    color: $primary-color-med;
+                }
+                #info-detail {
+                    @include CenterLayout;
+                    @include SetUpFlexLayout(
+                        column,
+                        nowrap,
+                        0px,
+                        center,
+                        center
+                    );
+                    #info-title {
+                        font-size: 24px;
+                        font-family: $Jost-Bold;
+                    }
+                    #info-message {
+                        font-family: $Jost-regular;
+                        font-size: 22px;
+                    }
+                }
+            }
+            button {
+                @extend %button;
+            }
+        }
+        #aboutUS-image {
+            @include StandardLayoutHidden(653px, 100%, transparent);
+            border-top-right-radius: 326px;
+            border-bottom-left-radius: 123px;
+            img {
+                @include SetUpImageContainer(100%, 100%, 0% 0%);
+            }
+        }
+    }
+}
+// Testimonial
+#Testimonial-container {
+    @include FullScreenLayout(679px);
+    @include CenterLayout;
+    margin-bottom: 180px;
+    #Testimonial {
+        @include StandardLayout($normal-width, 100%, $primary-color-light);
+        @include SetUpFlexLayout(column, nowrap, 38px, center, center);
+        padding: 88px 20px;
+        border-radius: 70px;
+        #Testimonial-title {
+            @extend %heading01;
+            max-width: 547px;
+            text-align: center;
+        }
+        #Testimonial-card-list {
+            @include SetUpGridColumnLayout(repeat(3, auto), 20px);
+            .Testimonial-card {
+                @include SetUpGridItemSpan(100%, span 1);
+                background-color: aquamarine;
+                @include SetUpFlexLayout(
+                    column,
+                    nowrap,
+                    25px,
+                    flex-start,
+                    flex-start
+                );
+                padding: 37px;
+                border-radius: 25px;
+                background-color: white;
+                .Testimonial-header {
+                    @include SetUpFlexLayout(row, nowrap, 23px, center, center);
+                    .Testimonial-avatar {
+                        background-color: aqua;
+                        @include StandardLayout(77px, 77px, transparent);
+                        border-radius: 50%;
+                        img {
+                            @include SetUpImageContainer(100%, 100%, 50% 50%);
+                        }
+                    }
+                    .Testimonial-info {
+                        @include SetUpFlexLayout(
+                            column,
+                            nowrap,
+                            0px,
+                            center,
+                            flex-start
+                        );
+                        .Testimonial-name {
+                            @extend %heading04;
+                        }
+                        .Testimonial-address {
+                            @extend %regular-text;
+                            color: $neutral-color-gray;
+                        }
+                    }
+                }
+                .Testimonial-Content {
+                    @extend %regular-text;
+                }
+            }
+        }
+    }
+}
+
+//Client-Logo
+#Client-Logo-container {
+    @include FullScreenLayout(auto);
+    @include CenterLayout;
+    margin-bottom: 165px;
+    #Client-Logo {
+        padding: 0px 55px;
+        @include StandardLayout($normal-width, 100%, transparent);
+        #Client-Logo-inner {
+            @include SetUpFlexLayout(row, nowrap, 108px, space-between, center);
+            img {
+                width: auto;
+                height: auto;
+                //flex-grow:1;
+                flex-shrink: 2;
+            }
+        }
+    }
+}
+//project
+#project-container {
+    @include FullScreenLayout(auto);
+    #project {
+        @include StandardLayout($normal-width, auto, transparent);
+        @include CenterLayout;
+        margin-bottom: 200px;
+        #project-inner {
+            @include StandardLayout(100%, auto, transparent);
+            @include SetUpFlexLayout(column, nowrap, 93px, center, center);
+            #project-header {
+                max-width: 737px;
+                #project-header-name {
+                    @extend %heading01;
+                    text-align: center;
+                    margin-bottom: 10px;
+                }
+                #project-header-description {
+                    @extend %regular-text;
+                    text-align: center;
+                }
+            }
+            #project-content {
+                @include SetUpGridColumnRowLayout(repeat(2, 1fr), 20px, 2);
+                @include StandardLayout(100%, auto, transparent);
+                column-gap: 104px;
+                row-gap: 56px;
+                .project-card {
+                    @include SetUpGridItemSpan(100%, span 1);
+                    .project-card-image {
+                        @include StandardLayoutHidden-Max(
+                            100%,
+                            100%,
+                            transparent
+                        );
+                        margin-bottom: 24px;
+                        img {
+                            @include SetUpImageContainer(100%, 100%, 50% 50%);
+                        }
+                    }
+                    .project-card-info {
+                        @include SetUpFlexLayout(
+                            row,
+                            nowrap,
+                            0px,
+                            space-between,
+                            center
+                        );
+                        .project-card-header {
+                            @include SetUpFlexLayout(
+                                column,
+                                nowrap,
+                                0px,
+                                center,
+                                flex-start
+                            );
+                            .project-card-name {
+                                @extend %heading03;
+                            }
+                            .project-card-type {
+                                @extend %regular-text;
+                                color: $neutral-color-gray;
+                            }
+                        }
+                        .project-card-seemore {
+                            @include CenterLayout;
+                            @include StandardLayout(
+                                70px,
+                                70px,
+                                $primary-color-light
+                            );
+                            border-radius: 50%;
+                        }
+                    }
+                }
+                .project-card:nth-child(1) .project-card-image {
+                    border-top-right-radius: 80px;
+                }
+                .project-card:nth-child(2) .project-card-image {
+                    border-top-left-radius: 80px;
+                }
+                .project-card:nth-child(3) .project-card-image {
+                    border-bottom-right-radius: 80px;
+                }
+                .project-card:nth-child(4) .project-card-image {
+                    border-bottom-left-radius: 80px;
+                }
+            }
+        }
+    }
+}
+//counter
+#Counter-container {
+    @include FullScreenLayout(457px);
+    @include CenterLayout;
+    background-color: $primary-color-light;
+    margin-bottom: 200px;
+    #Counter {
+        @include StandardLayout($normal-width, 155px, transparent);
+        @include SetUpFlexLayout(row, nowrap, 0px, space-around, center);
+        padding: 0px 59px;
+        .Counter-item {
+            flex-grow: 1;
+            @include SetUpFlexLayout(column, nowrap, 8px, center, center);
+            .Counter-content {
+                @extend %heading;
+                color: $primary-color-med;
+            }
+            .Counter-title {
+                @extend %regular-text;
+                text-align: center;
+            }
+        }
+        .Counter-line {
+            @include StandardLayout(0.5px, 135px, $primary-color-med);
+        }
+    }
+}
+//blog
+#Blog-container {
+    @include FullScreenLayout(714px);
+    margin-bottom: 200px;
+    #Blog {
+        @include StandardLayout($normal-width, 100%, transparent);
+        #Blog-inner {
+            @include SetUpFlexLayout(column, nowrap, 52px, center, center);
+            .Blog-header {
+                max-width: 811px;
+                .Blog-header-name {
+                    @extend %heading01;
+                    text-align: center;
+                    margin-bottom: 10px;
+                }
+                .Blog-header-description {
+                    @extend %regular-text;
+                    text-align: center;
+                }
+            }
+            #Blog-list > div:nth-child(2) {
+                @include StandardLayout(100%, 100%, $primary-color-light);
+                .Blog-card-container {
+                    .Blog-card-footer {
+                        .Blog-card-icon {
+                            @include StandardLayout(52px, 52px, white);
+                        }
+                    }
+                }
+            }
+            #Blog-list {
+                @include SetUpGridColumnLayout(repeat(3, auto), 27px);
+                @include StandardLayout(100%, 521px, transparent);
+                .Blog-card {
+                    @include SetUpGridItemSpan(100%, span 1);
+                    @include StandardLayout(100%, 100%, transparent);
+                    padding: 21px;
+                    border: 1px solid $neutral-color-lightgray;
+                    border-radius: 62px;
+                    .Blog-card-container {
+                        //@include StandardLayout(100%, 100%, transparent);
+                        @include SetUpFlexLayout(
+                            column,
+                            nowrap,
+                            21px,
+                            center,
+                            flex-start
+                        );
+                        .Blog-card-img {
+                            position: relative;
+                            @include StandardLayoutHidden-Max(
+                                340px,
+                                290px,
+                                transparent
+                            );
+                            border-top-left-radius: 45px;
+                            border-top-right-radius: 45px;
+                            .Blog-badge {
+                                @extend %regular-text16;
+                                position: absolute;
+                                bottom: 20px;
+                                left: 20px;
+                                @include StandardLayout(129px, 41px, white);
+                                @include CenterLayout;
+                                border-top-left-radius: 8px;
+                                border-top-right-radius: 8px;
+                                border-bottom-left-radius: 0px;
+                                border-bottom-right-radius: 8px;
+                            }
+                            img {
+                                @include SetUpImageContainer(
+                                    100%,
+                                    100%,
+                                    50% 100%
+                                );
+                            }
+                        }
+                        .Blog-card-title {
+                            @extend %heading03;
+                            max-width: 300px;
+                            margin-bottom: 9px;
+                        }
+                        .Blog-card-footer {
+                            @include SetUpFlexLayout(
+                                row,
+                                nowrap,
+                                0px,
+                                space-between,
+                                center
+                            );
+                            @include StandardLayout(100%, auto, transparent);
+                            .Blog-card-content {
+                                @extend %regular-text16;
+                            }
+                            .Blog-card-icon {
+                                @include StandardLayout(
+                                    52px,
+                                    52px,
+                                    $primary-color-light
+                                );
+                                @include CenterLayout;
+                                border-radius: 50%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+$width: 90% !important;
+//-------------------------------------------------------------------------------------------------------------
+@media screen and (max-width: 1200px) and (min-width: 0px) {
+    #main-banner {
+        @include StandardLayout($width, auto, transparent);
+        #banner-content {
+            font-family: $DMSerif-r;
+        }
+    }
+    //work
+    #work {
+        @include FullScreenLayout(auto !important);
+        #work-container {
+            padding: 200px 0 !important;
+            @include StandardLayout($width, auto !important, transparent);
+        }
+    }
+    #aboutUS {
+        @include StandardLayout($width, auto, transparent);
+        #aboutUS-content {
+            @include StandardLayout(472px, auto !important, transparent);
+        }
+    }
+    #Testimonial-container {
+        @include FullScreenLayout(auto !important);
+        #Testimonial {
+            @include StandardLayout($width, 100%, $primary-color-light);
+        }
+    }
+    #project-container {
+        @include FullScreenLayout(auto !important);
+        #project {
+            @include StandardLayout($width, auto, transparent);
+        }
+    }
+    #Counter-container {
+        #Counter {
+            @include StandardLayout($width, auto, transparent);
+            padding: 0px !important;
+        }
+    }
+    #Blog-container {
+        @include FullScreenLayout(auto !important);
+        margin-bottom: 200px;
+        #Blog {
+            @include StandardLayout($width, 100%, transparent);
+            #Blog-inner {
+                #Blog-list {
+                    @include StandardLayout(100%, auto !important, transparent);
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 1200px) {
+    #Client-Logo-inner {
+        @include SetUpFlexLayout(
+            row,
+            wrap !important,
+            80px !important,
+            center !important,
+            center
+        );
+    }
+}
+@media screen and (max-width: 992px) {
+    #aboutUS-container {
+        @include FullScreenLayout(auto !important);
+        #aboutUS {
+            @include SetUpFlexLayout(
+                column !important,
+                nowrap !important,
+                55px !important,
+                center !important,
+                flex-start !important
+            );
+            #aboutUS-image {
+                @include StandardLayoutHidden(
+                    100% !important,
+                    100%,
+                    transparent
+                );
+            }
+            #aboutUS-content {
+                @include StandardLayout(
+                    100% !important,
+                    auto !important,
+                    transparent
+                );
+            }
+        }
+    }
+    #Testimonial-container {
+        @include FullScreenLayout(auto !important);
+        #Testimonial {
+            #Testimonial-card-list {
+                @include SetUpGridColumnLayout(repeat(3, auto), 20px);
+                .Testimonial-card {
+                    @include SetUpGridItemSpan(100%, span 3);
+                }
+            }
+        }
+    }
+    //work
+    #work-container {
+        @include SetUpFlexLayout(
+            column !important,
+            nowrap,
+            52px,
+            center,
+            center !important
+        );
+        div.work-des {
+            margin-bottom: 20px !important;
+        }
+    }
+    #project-content {
+        column-gap: 50px !important;
+        row-gap: 50px !important;
+    }
+    #Counter-container {
+        @include FullScreenLayout(auto !important);
+        #Counter {
+            @include StandardLayout($width, auto, transparent);
+            padding: 151px 0px !important;
+            display: grid !important;
+            @include SetUpGridColumnLayout(
+                repeat(5, auto) !important,
+                30px 20px
+            );
+            .Counter-item {
+                @include SetUpGridItemSpan(auto, span 2);
+            }
+            .Counter-line {
+                @include SetUpGridItemSpan(0.5px, span 1);
+            }
+        }
+        #Counter div:nth-child(4) {
+            display: none !important;
+        }
+    }
+    #Blog-list {
+        @include SetUpGridColumnLayout(repeat(1, auto) !important, 27px);
+        @include StandardLayout(100%, auto !important, transparent);
+        .Blog-card {
+            .Blog-card-container {
+                .Blog-card-title {
+                    max-width: initial !important;
+                    margin-bottom: 0% !important;
+                }
+                .Blog-card-img {
+                    @include StandardLayoutHidden-Max(
+                        none !important,
+                        none !important,
+                        transparent
+                    );
+                    width: 100% !important;
+                    height: 400px !important;
+                    img {
+                        @include SetUpImageContainer(100%, 100%, 50% 50% !important);
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    #project-content {
+        @include SetUpGridColumnRowLayout(repeat(1, 1fr) !important, 20px, 4);
+    }
+}
+@media screen and (max-width: 576px) {
+    #banner {
+        @include ImageFullScreenLayout(url(../asset/image/Image.png), 1042px);
+        border-bottom-left-radius: 150px !important;
+    }
+    #project-inner {
+        @include SetUpFlexLayout(
+            column,
+            nowrap,
+            35px !important,
+            center,
+            center
+        );
+    }
+    .project-card-image {
+        height: 500px !important;
+    }
+    #aboutUS-image {
+        @include StandardLayout(90% !important, 550px !important, transparent);
+        border-top-right-radius: 160px !important;
+        border-bottom-left-radius: 60px !important;
+    }
+    #Counter-container {
+        @include FullScreenLayout(auto !important);
+        #Counter {
+            display: flex !important;
+            @include SetUpFlexLayout(
+                column !important,
+                nowrap,
+                40px !important,
+                center !important,
+                center
+            );
+            padding: 151px 0px !important;
+            .Counter-line {
+                @include StandardLayout(135px, 0.5px, $primary-color-med);
+            }
+        }
+        #Counter div:nth-child(4) {
+            display: block !important;
+        }
+    }
+}

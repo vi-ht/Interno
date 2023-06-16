@@ -1,0 +1,20 @@
+@font-face {
+    font-family: DMSerif-r;
+    src: url(../asset/font/DM_Serif_Display/DMSerifDisplay-Regular.ttf);
+}
+@font-face {
+    font-family: Jost-regular;
+    src: url(../asset/font/Jost/static/Jost-Regular.ttf);
+}
+@font-face {
+    font-family: Jost-SemiBold;
+    src: url(../asset/font/Jost/static/Jost-SemiBold.ttf);
+}
+@font-face {
+    font-family: Jost-Bold;
+    src: url(../asset/font/Jost/static/Jost-Bold.ttf);
+}
+$DMSerif-r: DMSerif-r;
+$Jost-regular: Jost-regular;
+$Jost-SemiBold: Jost-SemiBold;
+$Jost-Bold: Jost-Bold;

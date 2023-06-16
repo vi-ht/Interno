@@ -1,0 +1,981 @@
+@font-face {
+  font-family: DMSerif-r;
+  src: url(../asset/font/DM_Serif_Display/DMSerifDisplay-Regular.ttf);
+}
+@font-face {
+  font-family: Jost-regular;
+  src: url(../asset/font/Jost/static/Jost-Regular.ttf);
+}
+@font-face {
+  font-family: Jost-SemiBold;
+  src: url(../asset/font/Jost/static/Jost-SemiBold.ttf);
+}
+@font-face {
+  font-family: Jost-Bold;
+  src: url(../asset/font/Jost/static/Jost-Bold.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#aboutUS-container #aboutUS #aboutUS-content button, #banner #main-banner #banner-content button {
+  font-family: Jost-SemiBold;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 18px;
+  padding: 22px 49px;
+  background-color: #292F36;
+  color: #ffffff;
+  font-size: 18px;
+  font-style: bold;
+  line-height: 125%;
+  box-shadow: 0px 10px 20px 0px rgba(192, 192, 192, 0.3490196078);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+#aboutUS-container #aboutUS #aboutUS-content button span:nth-child(2), #banner #main-banner #banner-content button span:nth-child(2) {
+  color: #CDA274;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#Counter-container #Counter .Counter-item .Counter-content {
+  font-family: DMSerif-r;
+  font-size: 85px;
+  line-height: 125%;
+  letter-spacing: 2%;
+}
+
+#Blog-container #Blog #Blog-inner .Blog-header .Blog-header-name, #project-container #project #project-inner #project-header #project-header-name, #Testimonial-container #Testimonial #Testimonial-title, #aboutUS-container #aboutUS #aboutUS-content #content-title {
+  font-family: DMSerif-r;
+  font-size: 50px;
+  line-height: 125%;
+  letter-spacing: 2%;
+}
+
+#Blog-container #Blog #Blog-inner #Blog-list .Blog-card .Blog-card-container .Blog-card-title, #project-container #project #project-inner #project-content .project-card .project-card-info .project-card-header .project-card-name {
+  font-family: DMSerif-r;
+  font-size: 25px;
+  line-height: 125%;
+  letter-spacing: 2%;
+}
+
+#Testimonial-container #Testimonial #Testimonial-card-list .Testimonial-card .Testimonial-header .Testimonial-info .Testimonial-name {
+  font-family: DMSerif-r;
+  font-size: 22px;
+  line-height: 125%;
+  letter-spacing: 2%;
+}
+
+#Blog-container #Blog #Blog-inner .Blog-header .Blog-header-description, #Counter-container #Counter .Counter-item .Counter-title, #project-container #project #project-inner #project-content .project-card .project-card-info .project-card-header .project-card-type, #project-container #project #project-inner #project-header #project-header-description, #Testimonial-container #Testimonial #Testimonial-card-list .Testimonial-card .Testimonial-Content, #Testimonial-container #Testimonial #Testimonial-card-list .Testimonial-card .Testimonial-header .Testimonial-info .Testimonial-address, #aboutUS-container #aboutUS #aboutUS-content #content-des {
+  font-family: Jost-regular;
+  font-size: 22px;
+  line-height: 150%;
+}
+
+#Blog-container #Blog #Blog-inner #Blog-list .Blog-card .Blog-card-container .Blog-card-footer .Blog-card-content, #Blog-container #Blog #Blog-inner #Blog-list .Blog-card .Blog-card-container .Blog-card-img .Blog-badge {
+  font-family: Jost-regular;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+header {
+  width: 100%;
+  height: 138px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 43px;
+  padding-bottom: 43px;
+}
+header div {
+  width: 1200px;
+  height: 50px;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 0;
+  justify-content: space-between;
+  align-items: center;
+}
+header div nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 40px;
+  justify-content: flex-end;
+  align-items: center;
+}
+header div nav a {
+  text-decoration: none;
+  color: #292F36;
+  font-size: 20px;
+  font-family: Jost-regular;
+}
+
+#banner {
+  width: 100%;
+  height: 1042px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../asset/image/Image.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  border-bottom-left-radius: 291px;
+}
+#banner #main-banner {
+  width: 1200px;
+  height: auto;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+}
+#banner #main-banner #banner-content {
+  font-family: DMSerif-r;
+  max-width: 434px;
+}
+#banner #main-banner #banner-content div {
+  font-family: inherit;
+  color: #292F36;
+  font-size: 65px;
+  line-height: 125%;
+  margin-bottom: 9px;
+}
+#banner #main-banner #banner-content p {
+  font-family: Jost-regular;
+  color: #292F36;
+  font-size: 22px;
+  line-height: 150%;
+  margin-bottom: 21px;
+}
+#work {
+  width: 100%;
+  height: 764px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#work #work-container {
+  width: 1200px;
+  height: 225px;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 52px;
+  justify-content: center;
+  align-items: stretch;
+}
+#work #work-container div {
+  text-align: center;
+  flex-grow: 1;
+}
+#work #work-container div.work-name {
+  font-family: DMSerif-r;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+#work #work-container div.work-des {
+  font-family: Jost-regular;
+  line-height: 150%;
+  font-size: 22px;
+  margin-bottom: 48px;
+}
+#work #work-container div.work-read-more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  font-family: Jost-SemiBold;
+  font-size: 18px;
+}
+#work #work-container div.work-read-more span:nth-child(2) {
+  color: #CDA274;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#aboutUS-container {
+  width: 100%;
+  height: 700px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 200px;
+}
+#aboutUS-container #aboutUS {
+  width: 1200px;
+  height: 100%;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 75px;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#aboutUS-container #aboutUS #aboutUS-content {
+  width: 472px;
+  height: 614px;
+  background-color: transparent;
+}
+#aboutUS-container #aboutUS #aboutUS-content #content-title {
+  margin-bottom: 33px;
+  max-width: 420px;
+}
+#aboutUS-container #aboutUS #aboutUS-content #content-des {
+  margin-bottom: 45px;
+}
+#aboutUS-container #aboutUS #aboutUS-content #content-info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 15px;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 47px;
+}
+#aboutUS-container #aboutUS #aboutUS-content #content-info #info-icon {
+  width: 93px;
+  height: 93px;
+  background-color: #F4F0EC;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #CDA274;
+}
+#aboutUS-container #aboutUS #aboutUS-content #content-info #info-detail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 0px;
+  justify-content: center;
+  align-items: center;
+}
+#aboutUS-container #aboutUS #aboutUS-content #content-info #info-detail #info-title {
+  font-size: 24px;
+  font-family: Jost-Bold;
+}
+#aboutUS-container #aboutUS #aboutUS-content #content-info #info-detail #info-message {
+  font-family: Jost-regular;
+  font-size: 22px;
+}
+#aboutUS-container #aboutUS #aboutUS-image {
+  width: 653px;
+  height: 100%;
+  background-color: transparent;
+  overflow: hidden;
+  border-top-right-radius: 326px;
+  border-bottom-left-radius: 123px;
+}
+#aboutUS-container #aboutUS #aboutUS-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 0% 0%;
+}
+
+#Testimonial-container {
+  width: 100%;
+  height: 679px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 180px;
+}
+#Testimonial-container #Testimonial {
+  width: 1200px;
+  height: 100%;
+  background-color: #F4F0EC;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 38px;
+  justify-content: center;
+  align-items: center;
+  padding: 88px 20px;
+  border-radius: 70px;
+}
+#Testimonial-container #Testimonial #Testimonial-title {
+  max-width: 547px;
+  text-align: center;
+}
+#Testimonial-container #Testimonial #Testimonial-card-list {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, auto);
+}
+#Testimonial-container #Testimonial #Testimonial-card-list .Testimonial-card {
+  width: 100%;
+  grid-column: span 1;
+  background-color: aquamarine;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 25px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 37px;
+  border-radius: 25px;
+  background-color: white;
+}
+#Testimonial-container #Testimonial #Testimonial-card-list .Testimonial-card .Testimonial-header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 23px;
+  justify-content: center;
+  align-items: center;
+}
+#Testimonial-container #Testimonial #Testimonial-card-list .Testimonial-card .Testimonial-header .Testimonial-avatar {
+  background-color: aqua;
+  width: 77px;
+  height: 77px;
+  background-color: transparent;
+  border-radius: 50%;
+}
+#Testimonial-container #Testimonial #Testimonial-card-list .Testimonial-card .Testimonial-header .Testimonial-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+#Testimonial-container #Testimonial #Testimonial-card-list .Testimonial-card .Testimonial-header .Testimonial-info {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 0px;
+  justify-content: center;
+  align-items: flex-start;
+}
+#Testimonial-container #Testimonial #Testimonial-card-list .Testimonial-card .Testimonial-header .Testimonial-info .Testimonial-address {
+  color: #4D5053;
+}
+#Client-Logo-container {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 165px;
+}
+#Client-Logo-container #Client-Logo {
+  padding: 0px 55px;
+  width: 1200px;
+  height: 100%;
+  background-color: transparent;
+}
+#Client-Logo-container #Client-Logo #Client-Logo-inner {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 108px;
+  justify-content: space-between;
+  align-items: center;
+}
+#Client-Logo-container #Client-Logo #Client-Logo-inner img {
+  width: auto;
+  height: auto;
+  flex-shrink: 2;
+}
+
+#project-container {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#project-container #project {
+  width: 1200px;
+  height: auto;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 200px;
+}
+#project-container #project #project-inner {
+  width: 100%;
+  height: auto;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 93px;
+  justify-content: center;
+  align-items: center;
+}
+#project-container #project #project-inner #project-header {
+  max-width: 737px;
+}
+#project-container #project #project-inner #project-header #project-header-name {
+  text-align: center;
+  margin-bottom: 10px;
+}
+#project-container #project #project-inner #project-header #project-header-description {
+  text-align: center;
+}
+#project-container #project #project-inner #project-content {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  width: 100%;
+  height: auto;
+  background-color: transparent;
+  column-gap: 104px;
+  row-gap: 56px;
+}
+#project-container #project #project-inner #project-content .project-card {
+  width: 100%;
+  grid-column: span 1;
+}
+#project-container #project #project-inner #project-content .project-card .project-card-image {
+  max-width: 100%;
+  max-height: 100%;
+  background-color: transparent;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+#project-container #project #project-inner #project-content .project-card .project-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+#project-container #project #project-inner #project-content .project-card .project-card-info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 0px;
+  justify-content: space-between;
+  align-items: center;
+}
+#project-container #project #project-inner #project-content .project-card .project-card-info .project-card-header {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 0px;
+  justify-content: center;
+  align-items: flex-start;
+}
+#project-container #project #project-inner #project-content .project-card .project-card-info .project-card-header .project-card-type {
+  color: #4D5053;
+}
+#project-container #project #project-inner #project-content .project-card .project-card-info .project-card-seemore {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  background-color: #F4F0EC;
+  border-radius: 50%;
+}
+#project-container #project #project-inner #project-content .project-card:nth-child(1) .project-card-image {
+  border-top-right-radius: 80px;
+}
+#project-container #project #project-inner #project-content .project-card:nth-child(2) .project-card-image {
+  border-top-left-radius: 80px;
+}
+#project-container #project #project-inner #project-content .project-card:nth-child(3) .project-card-image {
+  border-bottom-right-radius: 80px;
+}
+#project-container #project #project-inner #project-content .project-card:nth-child(4) .project-card-image {
+  border-bottom-left-radius: 80px;
+}
+
+#Counter-container {
+  width: 100%;
+  height: 457px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F4F0EC;
+  margin-bottom: 200px;
+}
+#Counter-container #Counter {
+  width: 1200px;
+  height: 155px;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 0px;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0px 59px;
+}
+#Counter-container #Counter .Counter-item {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+#Counter-container #Counter .Counter-item .Counter-content {
+  color: #CDA274;
+}
+#Counter-container #Counter .Counter-item .Counter-title {
+  text-align: center;
+}
+#Counter-container #Counter .Counter-line {
+  width: 0.5px;
+  height: 135px;
+  background-color: #CDA274;
+}
+
+#Blog-container {
+  width: 100%;
+  height: 714px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 200px;
+}
+#Blog-container #Blog {
+  width: 1200px;
+  height: 100%;
+  background-color: transparent;
+}
+#Blog-container #Blog #Blog-inner {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 52px;
+  justify-content: center;
+  align-items: center;
+}
+#Blog-container #Blog #Blog-inner .Blog-header {
+  max-width: 811px;
+}
+#Blog-container #Blog #Blog-inner .Blog-header .Blog-header-name {
+  text-align: center;
+  margin-bottom: 10px;
+}
+#Blog-container #Blog #Blog-inner .Blog-header .Blog-header-description {
+  text-align: center;
+}
+#Blog-container #Blog #Blog-inner #Blog-list > div:nth-child(2) {
+  width: 100%;
+  height: 100%;
+  background-color: #F4F0EC;
+}
+#Blog-container #Blog #Blog-inner #Blog-list > div:nth-child(2) .Blog-card-container .Blog-card-footer .Blog-card-icon {
+  width: 52px;
+  height: 52px;
+  background-color: white;
+}
+#Blog-container #Blog #Blog-inner #Blog-list {
+  display: grid;
+  gap: 27px;
+  grid-template-columns: repeat(3, auto);
+  width: 100%;
+  height: 521px;
+  background-color: transparent;
+}
+#Blog-container #Blog #Blog-inner #Blog-list .Blog-card {
+  width: 100%;
+  grid-column: span 1;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  padding: 21px;
+  border: 1px solid #E7E7E7;
+  border-radius: 62px;
+}
+#Blog-container #Blog #Blog-inner #Blog-list .Blog-card .Blog-card-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 21px;
+  justify-content: center;
+  align-items: flex-start;
+}
+#Blog-container #Blog #Blog-inner #Blog-list .Blog-card .Blog-card-container .Blog-card-img {
+  position: relative;
+  max-width: 340px;
+  max-height: 290px;
+  background-color: transparent;
+  overflow: hidden;
+  border-top-left-radius: 45px;
+  border-top-right-radius: 45px;
+}
+#Blog-container #Blog #Blog-inner #Blog-list .Blog-card .Blog-card-container .Blog-card-img .Blog-badge {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 129px;
+  height: 41px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 8px;
+}
+#Blog-container #Blog #Blog-inner #Blog-list .Blog-card .Blog-card-container .Blog-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 100%;
+}
+#Blog-container #Blog #Blog-inner #Blog-list .Blog-card .Blog-card-container .Blog-card-title {
+  max-width: 300px;
+  margin-bottom: 9px;
+}
+#Blog-container #Blog #Blog-inner #Blog-list .Blog-card .Blog-card-container .Blog-card-footer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 0px;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  background-color: transparent;
+}
+#Blog-container #Blog #Blog-inner #Blog-list .Blog-card .Blog-card-container .Blog-card-footer .Blog-card-icon {
+  width: 52px;
+  height: 52px;
+  background-color: #F4F0EC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+@media screen and (max-width: 1200px) and (min-width: 0px) {
+  #main-banner {
+    width: 90% !important;
+    height: auto;
+    background-color: transparent;
+  }
+  #main-banner #banner-content {
+    font-family: DMSerif-r;
+  }
+  #work {
+    width: 100%;
+    height: auto !important;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #work #work-container {
+    padding: 200px 0 !important;
+    width: 90% !important;
+    height: auto !important;
+    background-color: transparent;
+  }
+  #aboutUS {
+    width: 90% !important;
+    height: auto;
+    background-color: transparent;
+  }
+  #aboutUS #aboutUS-content {
+    width: 472px;
+    height: auto !important;
+    background-color: transparent;
+  }
+  #Testimonial-container {
+    width: 100%;
+    height: auto !important;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #Testimonial-container #Testimonial {
+    width: 90% !important;
+    height: 100%;
+    background-color: #F4F0EC;
+  }
+  #project-container {
+    width: 100%;
+    height: auto !important;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #project-container #project {
+    width: 90% !important;
+    height: auto;
+    background-color: transparent;
+  }
+  #Counter-container #Counter {
+    width: 90% !important;
+    height: auto;
+    background-color: transparent;
+    padding: 0px !important;
+  }
+  #Blog-container {
+    width: 100%;
+    height: auto !important;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 200px;
+  }
+  #Blog-container #Blog {
+    width: 90% !important;
+    height: 100%;
+    background-color: transparent;
+  }
+  #Blog-container #Blog #Blog-inner #Blog-list {
+    width: 100%;
+    height: auto !important;
+    background-color: transparent;
+  }
+}
+@media screen and (max-width: 1200px) {
+  #Client-Logo-inner {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap !important;
+    gap: 80px !important;
+    justify-content: center !important;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 992px) {
+  #aboutUS-container {
+    width: 100%;
+    height: auto !important;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #aboutUS-container #aboutUS {
+    display: flex;
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    gap: 55px !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+  }
+  #aboutUS-container #aboutUS #aboutUS-image {
+    width: 100% !important;
+    height: 100%;
+    background-color: transparent;
+    overflow: hidden;
+  }
+  #aboutUS-container #aboutUS #aboutUS-content {
+    width: 100% !important;
+    height: auto !important;
+    background-color: transparent;
+  }
+  #Testimonial-container {
+    width: 100%;
+    height: auto !important;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #Testimonial-container #Testimonial #Testimonial-card-list {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, auto);
+  }
+  #Testimonial-container #Testimonial #Testimonial-card-list .Testimonial-card {
+    width: 100%;
+    grid-column: span 3;
+  }
+  #work-container {
+    display: flex;
+    flex-direction: column !important;
+    flex-wrap: nowrap;
+    gap: 52px;
+    justify-content: center;
+    align-items: center !important;
+  }
+  #work-container div.work-des {
+    margin-bottom: 20px !important;
+  }
+  #project-content {
+    column-gap: 50px !important;
+    row-gap: 50px !important;
+  }
+  #Counter-container {
+    width: 100%;
+    height: auto !important;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #Counter-container #Counter {
+    width: 90% !important;
+    height: auto;
+    background-color: transparent;
+    padding: 151px 0px !important;
+    display: grid !important;
+    display: grid;
+    gap: 30px 20px;
+    grid-template-columns: repeat(5, auto) !important;
+  }
+  #Counter-container #Counter .Counter-item {
+    width: auto;
+    grid-column: span 2;
+  }
+  #Counter-container #Counter .Counter-line {
+    width: 0.5px;
+    grid-column: span 1;
+  }
+  #Counter-container #Counter div:nth-child(4) {
+    display: none !important;
+  }
+  #Blog-list {
+    display: grid;
+    gap: 27px;
+    grid-template-columns: repeat(1, auto) !important;
+    width: 100%;
+    height: auto !important;
+    background-color: transparent;
+  }
+  #Blog-list .Blog-card .Blog-card-container .Blog-card-title {
+    max-width: initial !important;
+    margin-bottom: 0% !important;
+  }
+  #Blog-list .Blog-card .Blog-card-container .Blog-card-img {
+    max-width: none !important;
+    max-height: none !important;
+    background-color: transparent;
+    overflow: hidden;
+    width: 100% !important;
+    height: 400px !important;
+  }
+  #Blog-list .Blog-card .Blog-card-container .Blog-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50% !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  #project-content {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(1, 1fr) !important;
+    grid-template-rows: repeat(4, auto);
+  }
+}
+@media screen and (max-width: 576px) {
+  #banner {
+    width: 100%;
+    height: 1042px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../asset/image/Image.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    border-bottom-left-radius: 150px !important;
+  }
+  #project-inner {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 35px !important;
+    justify-content: center;
+    align-items: center;
+  }
+  .project-card-image {
+    height: 500px !important;
+  }
+  #aboutUS-image {
+    width: 90% !important;
+    height: 550px !important;
+    background-color: transparent;
+    border-top-right-radius: 160px !important;
+    border-bottom-left-radius: 60px !important;
+  }
+  #Counter-container {
+    width: 100%;
+    height: auto !important;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #Counter-container #Counter {
+    display: flex !important;
+    display: flex;
+    flex-direction: column !important;
+    flex-wrap: nowrap;
+    gap: 40px !important;
+    justify-content: center !important;
+    align-items: center;
+    padding: 151px 0px !important;
+  }
+  #Counter-container #Counter .Counter-line {
+    width: 135px;
+    height: 0.5px;
+    background-color: #CDA274;
+  }
+  #Counter-container #Counter div:nth-child(4) {
+    display: block !important;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

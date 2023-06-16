@@ -1,0 +1,91 @@
+@mixin ResetCSS {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@mixin CenterLayout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin SetUpFlexLayout($direction, $wrap, $gap, $justify, $align) {
+    display: flex;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+    gap: $gap;
+    justify-content: $justify;
+    align-items: $align;
+}
+@mixin FullScreenLayout($height) {
+    width: 100%;
+    height: $height;
+    overflow: hidden;
+    @include CenterLayout;
+}
+@mixin ImageFullScreenLayout($url,$height) {
+    width: 100%;
+    height: $height;
+    overflow: hidden;
+    @include CenterLayout;
+    background-image:$url;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+@mixin StandardLayout($width, $height, $color) {
+    width:  $width;
+    height: $height;
+    background-color: $color;
+    //overflow: hidden;
+}
+@mixin StandardLayoutHidden($width, $height, $color) {
+    width: $width;
+    height: $height;
+    background-color: $color;
+    overflow: hidden;
+}
+@mixin SetUpImageContainer($width, $height, $asis){
+    width: $width;
+    height: $height;
+    object-fit: cover;
+    object-position: $asis;
+}
+@mixin StandardLayoutHidden-Max($width, $height, $color) {
+    max-width:  $width;
+    max-height: $height;
+    background-color: $color;
+    overflow: hidden;
+}
+// @mixin SetUpImageContainer-Max($width, $height, $x_asis, $y_asis){
+//     max-width: $width;
+//     max-height: $height;
+//     object-fit: cover;
+//     object-position: $x_asis $y_asis;
+// }
+%setUpGrid{
+    display: grid;
+}
+@mixin SetUpGridLayout($col,$row,$gap){
+    @extend %setUpGrid;
+    gap: $gap;
+    grid-template-columns: $col;
+    grid-template-rows: $row;
+}
+@mixin SetUpGridColumnLayout($col,$gap){
+    display: grid;
+    gap: $gap;
+    grid-template-columns: $col;
+}
+@mixin SetUpGridColumnRowLayout($col,$gap,$row){
+    display: grid;
+    gap: $gap;
+    grid-template-columns: $col;
+    grid-template-rows: repeat($row,auto);
+}
+@mixin SetUpGridItemSpan($width,$span){
+    width: $width;
+    grid-column: $span;
+}
+@mixin SetUpGridItemStartSpan($span){
+    grid-column: $span;
+}
