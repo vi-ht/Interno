@@ -1,0 +1,58 @@
+%button {
+    font-family: $Jost-SemiBold;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 18px;
+    padding: 22px 49px;
+    background-color: $primary-color-dark;
+    color: $neutral-color-white;
+    font-size: 18px;
+    font-style: bold;
+    line-height: 125%;
+    box-shadow: 0px 10px 20px 0px #c0c0c059;
+    @include SetUpFlexLayout(row, nowrap, 8px, center, center);
+    position: relative;
+    span:nth-child(2) {
+        color: $primary-color-med;
+        @include CenterLayout;
+    }
+}
+%heading {
+    font-family: $DMSerif-r;
+    font-size: 85px;
+    line-height: 125%;
+    letter-spacing: 2%;
+}
+%heading01 {
+    font-family: $DMSerif-r;
+    font-size: 50px;
+    line-height: 125%;
+    letter-spacing: 2%;
+}
+%heading03 {
+    font-family: $DMSerif-r;
+    font-size: 25px;
+    line-height: 125%;
+    letter-spacing: 2%;
+}
+%heading04 {
+    font-family: $DMSerif-r;
+    font-size: 22px;
+    line-height: 125%;
+    letter-spacing: 2%;
+}
+%regular-text25 {
+    font-family: $Jost-regular;
+    font-size: 25px;
+    line-height: 150%;
+}
+%regular-text {
+    font-family: $Jost-regular;
+    font-size: 22px;
+    line-height: 150%;
+}
+%regular-text16 {
+    font-family: $Jost-regular;
+    font-size: 16px;
+    line-height: 150%;
+}

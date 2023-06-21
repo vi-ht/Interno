@@ -7,6 +7,10 @@
     src: url(../asset/font/Jost/static/Jost-Regular.ttf);
 }
 @font-face {
+    font-family: Jost-med;
+    src: url(../asset/font/Jost/static/Jost-Medium.ttf);
+}
+@font-face {
     font-family: Jost-SemiBold;
     src: url(../asset/font/Jost/static/Jost-SemiBold.ttf);
 }
@@ -16,5 +20,6 @@
 }
 $DMSerif-r: DMSerif-r;
 $Jost-regular: Jost-regular;
+$Jost-med: Jost-med;
 $Jost-SemiBold: Jost-SemiBold;
 $Jost-Bold: Jost-Bold;

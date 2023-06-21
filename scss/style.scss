@@ -1,78 +1,111 @@
 @import "variable.scss";
 @import "layout.scss";
 @import "font.scss";
+@import "component.scss";
+
 * {
     @include ResetCSS;
 }
-%button {
-    font-family: $Jost-SemiBold;
-    letter-spacing: 1px;
-    border: none;
-    border-radius: 18px;
-    padding: 22px 49px;
-    background-color: $primary-color-dark;
-    color: $neutral-color-white;
-    font-size: 18px;
-    font-style: bold;
-    line-height: 125%;
-    box-shadow: 0px 10px 20px 0px #c0c0c059;
-    @include SetUpFlexLayout(row, nowrap, 8px, center, center);
-    position: relative;
-    span:nth-child(2) {
-        color: $primary-color-med;
-        @include CenterLayout;
+//slide-bar
+#slidebar-container {   
+    @include FullScreenLayout(100vh);
+    width: 100vw !important;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    display: none;
+    #slide-bar {
+        @include StandardLayout(370px, 100vh, white);
+        @include CenterLayout-vertical;
+        position: absolute;
+        z-index: 1010;
+        top: 0;
+        right: 0;
+        box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.1);
+        #slidebar-nav {
+            @include StandardLayout(90%, 94%, white);
+            @include SetUpFlexLayout(
+                column,
+                nowrap,
+                10px,
+                flex-start,
+                flex-start
+            );
+            .slidebar-title {
+                @include StandardLayout(100%, auto, white);
+                @include SetUpFlexLayout(
+                    row,
+                    nowrap,
+                    25px,
+                    space-between,
+                    center
+                );
+                margin-bottom: 10px;
+                img{
+                    width: 150px;
+                    height: auto;
+                }
+                #close-button {
+                    padding: 8px;
+                    @include CenterLayout;
+                    iconify-icon {
+                        cursor: pointer;
+                        transition: color 0.3s;
+                    }
+                    iconify-icon:hover {
+                        color: $primary-color-med
+                    }
+                }
+            }
+            .slidebar-line {
+                width: 100%;
+                height: 1px;
+                background-color: $neutral-color-gray;
+                margin-bottom: 10px;
+                opacity: 0.5;
+            }
+            .slidebar-item {
+                @include StandardLayout(100%, auto, white);
+                @include SetUpFlexLayout(row, nowrap, 25px, flex-start, center);
+                padding: 12px 18px;
+                border-radius: 10px;
+                a {
+                    text-decoration: none;
+                    color: $primary-color-dark;
+                    font-size: 20px;
+                    font-family: Jost-regular;
+                }
+                iconify-icon {
+                    color: $primary-color-dark;
+                }
+            }
+            .slidebar-item.active {
+                background-color: $primary-color-med;
+                a {
+                    color: $primary-color-light;
+                    font-family: $Jost-med;
+                }
+                iconify-icon {
+                    color: $primary-color-light;
+                }
+            }
+        }
     }
 }
-%heading {
-    font-family: $DMSerif-r;
-    font-size: 85px;
-    line-height: 125%;
-    letter-spacing: 2%;
-}
-%heading01 {
-    font-family: $DMSerif-r;
-    font-size: 50px;
-    line-height: 125%;
-    letter-spacing: 2%;
-}
-%heading03 {
-    font-family: $DMSerif-r;
-    font-size: 25px;
-    line-height: 125%;
-    letter-spacing: 2%;
-}
-%heading04 {
-    font-family: $DMSerif-r;
-    font-size: 22px;
-    line-height: 125%;
-    letter-spacing: 2%;
-}
-%regular-text25 {
-    font-family: $Jost-regular;
-    font-size: 25px;
-    line-height: 150%;
-}
-%regular-text {
-    font-family: $Jost-regular;
-    font-size: 22px;
-    line-height: 150%;
-}
-%regular-text16 {
-    font-family: $Jost-regular;
-    font-size: 16px;
-    line-height: 150%;
-}
+
 // Header
 header {
     @include FullScreenLayout(138px);
     padding-top: 43px;
     padding-bottom: 43px;
-    div {
+    #navbar-container {
         @include StandardLayout($normal-width, 50px, transparent);
         @include SetUpFlexLayout(row, nowrap, 0, space-between, center);
         #max-nav {
             @include SetUpFlexLayout(row, nowrap, 40px, flex-end, center);
-            a {
+            .nav-link {
                 text-decoration: none;
                 color: $primary-color-dark;
                 font-size: 20px;
@@ -82,11 +115,17 @@ header {
                 position: relative;
                 top: 3px;
             }
+            .nav-link.active{
+                font-family: $Jost-med;
+            }
+            .nav-link:hover{
+                text-decoration: underline $primary-color-med 5px;
+            }
         }
-        #min-nav{
+        #min-nav {
             display: none;
-            a{
-                iconify-icon{
+            a {
+                iconify-icon {
                     color: $primary-color-dark;
                 }
             }
@@ -627,7 +666,7 @@ $width: 90% !important;
         @include FullScreenLayout(auto !important);
         padding-top: 20px !important;
         padding-bottom: 20px !important;
-        div {
+        #navbar-container {
             @include StandardLayout($width, 50px, transparent);
         }
     }
@@ -705,12 +744,15 @@ $width: 90% !important;
     }
 }
 @media screen and (max-width: 992px) and (min-width: 0px) {
-    #max-nav{
+    #max-nav {
         display: none !important;
     }
-    #min-nav{
+    #min-nav {
         display: flex !important;
         @include SetUpFlexLayout(row, nowrap, 40px, flex-end, center);
+    }
+    #banner {
+        height: calc(100vh - 90px) !important;
     }
 }
 @media screen and (max-width: 1200px) {
@@ -743,7 +785,6 @@ $width: 90% !important;
     }
 }
 @media screen and (max-width: 992px) {
-    
     #aboutUS-container {
         @include FullScreenLayout(auto !important);
         #aboutUS {
@@ -900,6 +941,9 @@ $width: 90% !important;
     }
 }
 @media screen and (max-width: 576px) {
+    #slide-bar {
+        @include StandardLayout(100% !important, 100vh, white);
+    }
     #banner {
         @include ImageFullScreenLayout(url(../asset/image/Image.png), 1042px);
         border-bottom-left-radius: 150px !important;
