@@ -70,13 +70,25 @@ header {
     div {
         @include StandardLayout($normal-width, 50px, transparent);
         @include SetUpFlexLayout(row, nowrap, 0, space-between, center);
-        nav {
+        #max-nav {
             @include SetUpFlexLayout(row, nowrap, 40px, flex-end, center);
             a {
                 text-decoration: none;
                 color: $primary-color-dark;
                 font-size: 20px;
                 font-family: Jost-regular;
+            }
+            a:last-child {
+                position: relative;
+                top: 3px;
+            }
+        }
+        #min-nav{
+            display: none;
+            a{
+                iconify-icon{
+                    color: $primary-color-dark;
+                }
             }
         }
     }
@@ -412,7 +424,7 @@ header {
 }
 //blog
 #Blog-container {
-    @include FullScreenLayout(714px);
+    @include FullScreenLayout(717px);
     margin-bottom: 200px;
     #Blog {
         @include StandardLayout($normal-width, 100%, transparent);
@@ -462,7 +474,7 @@ header {
                             position: relative;
                             @include StandardLayoutHidden-Max(
                                 340px,
-                                290px,
+                                289px,
                                 transparent
                             );
                             border-top-left-radius: 45px;
@@ -489,8 +501,8 @@ header {
                         }
                         .Blog-card-title {
                             @extend %heading03;
-                            max-width: 300px;
-                            margin-bottom: 9px;
+                            max-width: 260px;
+                            margin-bottom: 5px;
                         }
                         .Blog-card-footer {
                             @include SetUpFlexLayout(
@@ -520,9 +532,105 @@ header {
         }
     }
 }
+//contact
+#Contact-container {
+    @include FullScreenLayout(374px);
+    margin-bottom: 200px;
+    #Contact {
+        @include StandardLayout($normal-width, 100%, $primary-color-dark);
+        border-radius: 70px;
+        @include CenterLayout-vertical;
+        gap: 32px;
+        #Contact-content {
+            @include CenterLayout-vertical;
+            gap: 11px;
+            #Contact-title {
+                @extend %heading01;
+                color: $neutral-color-white;
+                text-align: center;
+            }
+            #Contact-des {
+                @extend %regular-text;
+                color: $neutral-color-white;
+                text-align: center;
+            }
+        }
+        button {
+            @extend %button;
+            background-color: $primary-color-med;
+            color: white;
+
+            span {
+                iconify-icon {
+                    color: $primary-color-dark;
+                }
+            }
+            box-shadow: 0px 10px 20px 0px #1f2022;
+        }
+    }
+}
+//footer
+footer {
+    @include FullScreenLayout(577px);
+    margin-bottom: 46px;
+    @include SetUpFlexLayout(column, nowrap, 134px, space-between, center);
+    #footer {
+        @include StandardLayout($normal-width, 100%, transparent);
+        @include SetUpGridColumnLayout(393px 125px 120px 258px, 101px);
+        .footer-content {
+            @include SetUpGridItemSpan(100%, span 1);
+            @include SetUpFlexLayout(
+                column,
+                wrap,
+                33px,
+                flex-start,
+                flex-start
+            );
+            .content-title {
+                @extend %heading03;
+            }
+            #footer-slogan {
+                @extend %regular-text;
+                color: $neutral-color-gray;
+                word-break: keep-all !important;
+            }
+            #footer-social {
+                @include SetUpFlexLayout(row, nowrap, 54px, flex-start, center);
+            }
+            .content-link-list {
+                @include SetUpFlexLayout(
+                    column,
+                    nowrap,
+                    41px,
+                    flex-start,
+                    flex-start
+                );
+                .content-link {
+                    @extend %regular-text;
+                    letter-spacing: 1%;
+                    color: $neutral-color-gray;
+                }
+            }
+        }
+    }
+    #copyright {
+        @include StandardLayout($normal-width, 100%, transparent);
+        @extend %regular-text;
+        color: $neutral-color-gray;
+        text-align: center;
+    }
+}
 $width: 90% !important;
 //-------------------------------------------------------------------------------------------------------------
 @media screen and (max-width: 1200px) and (min-width: 0px) {
+    header {
+        @include FullScreenLayout(auto !important);
+        padding-top: 20px !important;
+        padding-bottom: 20px !important;
+        div {
+            @include StandardLayout($width, 50px, transparent);
+        }
+    }
     #main-banner {
         @include StandardLayout($width, auto, transparent);
         #banner-content {
@@ -573,6 +681,37 @@ $width: 90% !important;
             }
         }
     }
+    #Contact-container {
+        @include FullScreenLayout(auto !important);
+
+        #Contact {
+            padding: 80px 10px;
+            @include StandardLayout($width, 100%, $primary-color-dark);
+        }
+    }
+    footer {
+        @include FullScreenLayout(auto !important);
+        @include SetUpFlexLayout(
+            column,
+            nowrap,
+            50px !important,
+            space-between,
+            center
+        );
+        #footer,
+        #copyright {
+            @include StandardLayout($width, 100%, transparent);
+        }
+    }
+}
+@media screen and (max-width: 992px) and (min-width: 0px) {
+    #max-nav{
+        display: none !important;
+    }
+    #min-nav{
+        display: flex !important;
+        @include SetUpFlexLayout(row, nowrap, 40px, flex-end, center);
+    }
 }
 @media screen and (max-width: 1200px) {
     #Client-Logo-inner {
@@ -584,8 +723,27 @@ $width: 90% !important;
             center
         );
     }
+    #footer {
+        @include SetUpGridColumnLayout(
+            repeat(11, auto) !important,
+            60px !important
+        );
+    }
+    #footer div:nth-child(1) {
+        @include SetUpGridItemSpan(100%, span 4);
+    }
+    #footer div:nth-child(2) {
+        @include SetUpGridItemSpan(100%, span 2);
+    }
+    #footer div:nth-child(3) {
+        @include SetUpGridItemSpan(100%, span 2);
+    }
+    #footer div:nth-child(4) {
+        @include SetUpGridItemSpan(100%, span 3);
+    }
 }
 @media screen and (max-width: 992px) {
+    
     #aboutUS-container {
         @include FullScreenLayout(auto !important);
         #aboutUS {
@@ -679,16 +837,66 @@ $width: 90% !important;
                     width: 100% !important;
                     height: 400px !important;
                     img {
-                        @include SetUpImageContainer(100%, 100%, 50% 50% !important);
+                        @include SetUpImageContainer(
+                            100%,
+                            100%,
+                            50% 50% !important
+                        );
                     }
                 }
             }
         }
     }
+    #footer {
+        @include SetUpGridColumnLayout(
+            repeat(12, auto) !important,
+            60px !important
+        );
+    }
+    #footer div:nth-child(1) {
+        @include SetUpGridItemSpan(100%, span 12);
+    }
+    #footer div:nth-child(2) {
+        @include SetUpGridItemSpan(100%, span 3);
+    }
+    #footer div:nth-child(3) {
+        @include SetUpGridItemSpan(100%, span 3);
+    }
+    #footer div:nth-child(4) {
+        @include SetUpGridItemSpan(100%, span 6);
+    }
 }
 @media screen and (max-width: 768px) {
     #project-content {
         @include SetUpGridColumnRowLayout(repeat(1, 1fr) !important, 20px, 4);
+    }
+    #footer {
+        display: grid !important;
+        @include SetUpGridColumnLayout(
+            repeat(3, auto) !important,
+            100px !important
+        );
+    }
+    #footer div:nth-child(1) {
+        @include SetUpGridItemSpan(100%, span 3);
+    }
+    #footer div:nth-child(2) {
+        @include SetUpGridItemSpan(100%, span 1);
+    }
+    #footer div:nth-child(3) {
+        @include SetUpGridItemSpan(100%, span 1);
+    }
+    #footer div:nth-child(4) {
+        @include SetUpGridItemSpan(100%, span 3);
+    }
+    .content-link-list {
+        @include SetUpFlexLayout(
+            column,
+            nowrap,
+            30px !important,
+            flex-start,
+            flex-start
+        );
     }
 }
 @media screen and (max-width: 576px) {
@@ -732,5 +940,32 @@ $width: 90% !important;
         #Counter div:nth-child(4) {
             display: block !important;
         }
+    }
+    #footer {
+        @include SetUpGridColumnLayout(
+            repeat(2, auto) !important,
+            60px !important
+        );
+    }
+    #footer div:nth-child(1) {
+        @include SetUpGridItemSpan(100%, span 2);
+    }
+    #footer div:nth-child(2) {
+        @include SetUpGridItemSpan(100%, span 1);
+    }
+    #footer div:nth-child(3) {
+        @include SetUpGridItemSpan(100%, span 1);
+    }
+    #footer div:nth-child(4) {
+        @include SetUpGridItemSpan(100%, span 2);
+    }
+    .content-link-list {
+        @include SetUpFlexLayout(
+            column,
+            nowrap,
+            25px !important,
+            flex-start,
+            flex-start
+        );
     }
 }

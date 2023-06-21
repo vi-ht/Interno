@@ -20,7 +20,7 @@
   box-sizing: border-box;
 }
 
-#aboutUS-container #aboutUS #aboutUS-content button, #banner #main-banner #banner-content button {
+#Contact-container #Contact button, #aboutUS-container #aboutUS #aboutUS-content button, #banner #main-banner #banner-content button {
   font-family: Jost-SemiBold;
   letter-spacing: 1px;
   border: none;
@@ -40,7 +40,7 @@
   align-items: center;
   position: relative;
 }
-#aboutUS-container #aboutUS #aboutUS-content button span:nth-child(2), #banner #main-banner #banner-content button span:nth-child(2) {
+#Contact-container #Contact button span:nth-child(2), #aboutUS-container #aboutUS #aboutUS-content button span:nth-child(2), #banner #main-banner #banner-content button span:nth-child(2) {
   color: #CDA274;
   display: flex;
   justify-content: center;
@@ -54,14 +54,14 @@
   letter-spacing: 2%;
 }
 
-#Blog-container #Blog #Blog-inner .Blog-header .Blog-header-name, #project-container #project #project-inner #project-header #project-header-name, #Testimonial-container #Testimonial #Testimonial-title, #aboutUS-container #aboutUS #aboutUS-content #content-title {
+#Contact-container #Contact #Contact-content #Contact-title, #Blog-container #Blog #Blog-inner .Blog-header .Blog-header-name, #project-container #project #project-inner #project-header #project-header-name, #Testimonial-container #Testimonial #Testimonial-title, #aboutUS-container #aboutUS #aboutUS-content #content-title {
   font-family: DMSerif-r;
   font-size: 50px;
   line-height: 125%;
   letter-spacing: 2%;
 }
 
-#Blog-container #Blog #Blog-inner #Blog-list .Blog-card .Blog-card-container .Blog-card-title, #project-container #project #project-inner #project-content .project-card .project-card-info .project-card-header .project-card-name {
+footer #footer .footer-content .content-title, #Blog-container #Blog #Blog-inner #Blog-list .Blog-card .Blog-card-container .Blog-card-title, #project-container #project #project-inner #project-content .project-card .project-card-info .project-card-header .project-card-name {
   font-family: DMSerif-r;
   font-size: 25px;
   line-height: 125%;
@@ -75,7 +75,7 @@
   letter-spacing: 2%;
 }
 
-#Blog-container #Blog #Blog-inner .Blog-header .Blog-header-description, #Counter-container #Counter .Counter-item .Counter-title, #project-container #project #project-inner #project-content .project-card .project-card-info .project-card-header .project-card-type, #project-container #project #project-inner #project-header #project-header-description, #Testimonial-container #Testimonial #Testimonial-card-list .Testimonial-card .Testimonial-Content, #Testimonial-container #Testimonial #Testimonial-card-list .Testimonial-card .Testimonial-header .Testimonial-info .Testimonial-address, #aboutUS-container #aboutUS #aboutUS-content #content-des {
+footer #copyright, footer #footer .footer-content .content-link-list .content-link, footer #footer .footer-content #footer-slogan, #Contact-container #Contact #Contact-content #Contact-des, #Blog-container #Blog #Blog-inner .Blog-header .Blog-header-description, #Counter-container #Counter .Counter-item .Counter-title, #project-container #project #project-inner #project-content .project-card .project-card-info .project-card-header .project-card-type, #project-container #project #project-inner #project-header #project-header-description, #Testimonial-container #Testimonial #Testimonial-card-list .Testimonial-card .Testimonial-Content, #Testimonial-container #Testimonial #Testimonial-card-list .Testimonial-card .Testimonial-header .Testimonial-info .Testimonial-address, #aboutUS-container #aboutUS #aboutUS-content #content-des {
   font-family: Jost-regular;
   font-size: 22px;
   line-height: 150%;
@@ -108,7 +108,7 @@ header div {
   justify-content: space-between;
   align-items: center;
 }
-header div nav {
+header div #max-nav {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -116,11 +116,21 @@ header div nav {
   justify-content: flex-end;
   align-items: center;
 }
-header div nav a {
+header div #max-nav a {
   text-decoration: none;
   color: #292F36;
   font-size: 20px;
   font-family: Jost-regular;
+}
+header div #max-nav a:last-child {
+  position: relative;
+  top: 3px;
+}
+header div #min-nav {
+  display: none;
+}
+header div #min-nav a iconify-icon {
+  color: #292F36;
 }
 
 #banner {
@@ -578,7 +588,7 @@ header div nav a {
 
 #Blog-container {
   width: 100%;
-  height: 714px;
+  height: 717px;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -647,7 +657,7 @@ header div nav a {
 #Blog-container #Blog #Blog-inner #Blog-list .Blog-card .Blog-card-container .Blog-card-img {
   position: relative;
   max-width: 340px;
-  max-height: 290px;
+  max-height: 289px;
   background-color: transparent;
   overflow: hidden;
   border-top-left-radius: 45px;
@@ -675,8 +685,8 @@ header div nav a {
   object-position: 50% 100%;
 }
 #Blog-container #Blog #Blog-inner #Blog-list .Blog-card .Blog-card-container .Blog-card-title {
-  max-width: 300px;
-  margin-bottom: 9px;
+  max-width: 260px;
+  margin-bottom: 5px;
 }
 #Blog-container #Blog #Blog-inner #Blog-list .Blog-card .Blog-card-container .Blog-card-footer {
   display: flex;
@@ -699,7 +709,131 @@ header div nav a {
   border-radius: 50%;
 }
 
+#Contact-container {
+  width: 100%;
+  height: 374px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 200px;
+}
+#Contact-container #Contact {
+  width: 1200px;
+  height: 100%;
+  background-color: #292F36;
+  border-radius: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+#Contact-container #Contact #Contact-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 11px;
+}
+#Contact-container #Contact #Contact-content #Contact-title {
+  color: #ffffff;
+  text-align: center;
+}
+#Contact-container #Contact #Contact-content #Contact-des {
+  color: #ffffff;
+  text-align: center;
+}
+#Contact-container #Contact button {
+  background-color: #CDA274;
+  color: white;
+  box-shadow: 0px 10px 20px 0px #1f2022;
+}
+#Contact-container #Contact button span iconify-icon {
+  color: #292F36;
+}
+
+footer {
+  width: 100%;
+  height: 577px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 46px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 134px;
+  justify-content: space-between;
+  align-items: center;
+}
+footer #footer {
+  width: 1200px;
+  height: 100%;
+  background-color: transparent;
+  display: grid;
+  gap: 101px;
+  grid-template-columns: 393px 125px 120px 258px;
+}
+footer #footer .footer-content {
+  width: 100%;
+  grid-column: span 1;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 33px;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+footer #footer .footer-content #footer-slogan {
+  color: #4D5053;
+  word-break: keep-all !important;
+}
+footer #footer .footer-content #footer-social {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 54px;
+  justify-content: flex-start;
+  align-items: center;
+}
+footer #footer .footer-content .content-link-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 41px;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+footer #footer .footer-content .content-link-list .content-link {
+  letter-spacing: 1%;
+  color: #4D5053;
+}
+footer #copyright {
+  width: 1200px;
+  height: 100%;
+  background-color: transparent;
+  color: #4D5053;
+  text-align: center;
+}
+
 @media screen and (max-width: 1200px) and (min-width: 0px) {
+  header {
+    width: 100%;
+    height: auto !important;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+  }
+  header div {
+    width: 90% !important;
+    height: 50px;
+    background-color: transparent;
+  }
   #main-banner {
     width: 90% !important;
     height: auto;
@@ -783,6 +917,54 @@ header div nav a {
     height: auto !important;
     background-color: transparent;
   }
+  #Contact-container {
+    width: 100%;
+    height: auto !important;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #Contact-container #Contact {
+    padding: 80px 10px;
+    width: 90% !important;
+    height: 100%;
+    background-color: #292F36;
+  }
+  footer {
+    width: 100%;
+    height: auto !important;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 50px !important;
+    justify-content: space-between;
+    align-items: center;
+  }
+  footer #footer,
+  footer #copyright {
+    width: 90% !important;
+    height: 100%;
+    background-color: transparent;
+  }
+}
+@media screen and (max-width: 992px) and (min-width: 0px) {
+  #max-nav {
+    display: none !important;
+  }
+  #min-nav {
+    display: flex !important;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 40px;
+    justify-content: flex-end;
+    align-items: center;
+  }
 }
 @media screen and (max-width: 1200px) {
   #Client-Logo-inner {
@@ -792,6 +974,27 @@ header div nav a {
     gap: 80px !important;
     justify-content: center !important;
     align-items: center;
+  }
+  #footer {
+    display: grid;
+    gap: 60px !important;
+    grid-template-columns: repeat(11, auto) !important;
+  }
+  #footer div:nth-child(1) {
+    width: 100%;
+    grid-column: span 4;
+  }
+  #footer div:nth-child(2) {
+    width: 100%;
+    grid-column: span 2;
+  }
+  #footer div:nth-child(3) {
+    width: 100%;
+    grid-column: span 2;
+  }
+  #footer div:nth-child(4) {
+    width: 100%;
+    grid-column: span 3;
   }
 }
 @media screen and (max-width: 992px) {
@@ -909,6 +1112,27 @@ header div nav a {
     object-fit: cover;
     object-position: 50% 50% !important;
   }
+  #footer {
+    display: grid;
+    gap: 60px !important;
+    grid-template-columns: repeat(12, auto) !important;
+  }
+  #footer div:nth-child(1) {
+    width: 100%;
+    grid-column: span 12;
+  }
+  #footer div:nth-child(2) {
+    width: 100%;
+    grid-column: span 3;
+  }
+  #footer div:nth-child(3) {
+    width: 100%;
+    grid-column: span 3;
+  }
+  #footer div:nth-child(4) {
+    width: 100%;
+    grid-column: span 6;
+  }
 }
 @media screen and (max-width: 768px) {
   #project-content {
@@ -916,6 +1140,36 @@ header div nav a {
     gap: 20px;
     grid-template-columns: repeat(1, 1fr) !important;
     grid-template-rows: repeat(4, auto);
+  }
+  #footer {
+    display: grid !important;
+    display: grid;
+    gap: 100px !important;
+    grid-template-columns: repeat(3, auto) !important;
+  }
+  #footer div:nth-child(1) {
+    width: 100%;
+    grid-column: span 3;
+  }
+  #footer div:nth-child(2) {
+    width: 100%;
+    grid-column: span 1;
+  }
+  #footer div:nth-child(3) {
+    width: 100%;
+    grid-column: span 1;
+  }
+  #footer div:nth-child(4) {
+    width: 100%;
+    grid-column: span 3;
+  }
+  .content-link-list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 30px !important;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
 }
 @media screen and (max-width: 576px) {
@@ -975,6 +1229,35 @@ header div nav a {
   }
   #Counter-container #Counter div:nth-child(4) {
     display: block !important;
+  }
+  #footer {
+    display: grid;
+    gap: 60px !important;
+    grid-template-columns: repeat(2, auto) !important;
+  }
+  #footer div:nth-child(1) {
+    width: 100%;
+    grid-column: span 2;
+  }
+  #footer div:nth-child(2) {
+    width: 100%;
+    grid-column: span 1;
+  }
+  #footer div:nth-child(3) {
+    width: 100%;
+    grid-column: span 1;
+  }
+  #footer div:nth-child(4) {
+    width: 100%;
+    grid-column: span 2;
+  }
+  .content-link-list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 25px !important;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
 }
 
