@@ -6,15 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interno | Landing Page</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="asset/image/favicon.png">
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     <script src="js/script.js" type="text/javascript" defer></script>
 </head>
 
 <body>
     <header id="header">
         <div id="navbar-container">
-            <img src="asset/image/Logo.png" alt="logo" />
+            <a href="index.html"><img src="asset/image/Logo.png" alt="logo" /></a>
             <nav id="max-nav">
                 <a href="index.html" class="nav-link active">Home</a>
                 <a href="#" class="nav-link">Pages</a>
@@ -22,7 +24,8 @@
                 <a href="#" class="nav-link">Project</a>
                 <a href="#" class="nav-link">Blog</a>
                 <a href="#" class="nav-link">Contact</a>
-                <a href="#" class="nav-link"><iconify-icon icon="iconoir:search" width="24" height="24"></iconify-icon></a>
+                <a href="#" class="nav-link"><iconify-icon icon="iconoir:search" width="24"
+                        height="24"></iconify-icon></a>
             </nav>
             <nav id="min-nav">
                 <a href="#"> <iconify-icon icon="solar:hamburger-menu-line-duotone" width="40"
@@ -30,6 +33,7 @@
             </nav>
         </div>
         <div id="slidebar-container">
+            <div id="slidebar-background"></div>
             <div id="slide-bar">
                 <nav id="slidebar-nav">
                     <div class="slidebar-title">
@@ -66,8 +70,7 @@
                         <a href="#">Contact</a>
                     </div>
                     <div class="slidebar-item">
-                        <iconify-icon icon="iconoir:search"
-                            width="24" height="24"></iconify-icon>
+                        <iconify-icon icon="iconoir:search" width="24" height="24"></iconify-icon>
                         <a href="#">Search</a>
                     </div>
                     <!-- <a href="#"><iconify-icon icon="iconoir:search" width="24" height="24"></iconify-icon></a> -->
@@ -75,7 +78,7 @@
             </div>
         </div>
     </header>
-    <main id="">
+    <main id="main">
         <section id="banner">
             <div id="main-banner">
                 <div id="banner-content">
@@ -311,22 +314,22 @@
         <section id="Counter-container">
             <div id="Counter">
                 <div class="Counter-item">
-                    <div class="Counter-content">12</div>
+                    <div class="Counter-content" id="YOE">12</div>
                     <div class="Counter-title">Years Of Experiance</div>
                 </div>
-                <div class="Counter-line"></div>
+                <div class="Counter-line" ></div>
                 <div class="Counter-item">
-                    <div class="Counter-content">85</div>
+                    <div class="Counter-content" id="SP">85</div>
                     <div class="Counter-title">Success Project</div>
                 </div>
                 <div class="Counter-line"></div>
                 <div class="Counter-item">
-                    <div class="Counter-content">15</div>
+                    <div class="Counter-content" id="AP">15</div>
                     <div class="Counter-title">Active Project</div>
                 </div>
                 <div class="Counter-line"></div>
                 <div class="Counter-item">
-                    <div class="Counter-content">95</div>
+                    <div class="Counter-content" id="HC">95</div>
                     <div class="Counter-title">Happy Customers</div>
                 </div>
             </div>

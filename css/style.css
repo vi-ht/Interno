@@ -85,6 +85,77 @@ footer #copyright, footer #footer .footer-content .content-link-list .content-li
   line-height: 150%;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #F4F0EC;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #CDA274;
+  border-radius: 4px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #292F36;
+}
+
+@keyframes slipToRight-100 {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slipToLeft-100 {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slipToBottom-100 {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slipToLeft-200 {
+  0% {
+    transform: translateX(200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slipToTop-200 {
+  0% {
+    transform: translateY(200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -99,12 +170,17 @@ footer #copyright, footer #footer .footer-content .content-link-list .content-li
   justify-content: center;
   align-items: center;
   width: 100vw !important;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: transparent !important;
   position: absolute;
   z-index: 1000;
   top: 0;
   right: 0;
   display: none;
+}
+#slidebar-container #slidebar-background {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 #slidebar-container #slide-bar {
   width: 370px;
@@ -117,7 +193,7 @@ footer #copyright, footer #footer .footer-content .content-link-list .content-li
   position: absolute;
   z-index: 1010;
   top: 0;
-  right: 0;
+  right: -370px;
   box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.1);
 }
 #slidebar-container #slide-bar #slidebar-nav {
@@ -209,6 +285,8 @@ header {
   align-items: center;
   padding-top: 43px;
   padding-bottom: 43px;
+  background-color: white;
+  transition: height 200ms;
 }
 header #navbar-container {
   width: 1200px;
@@ -234,6 +312,7 @@ header #navbar-container #max-nav .nav-link {
   color: #292F36;
   font-size: 20px;
   font-family: Jost-regular;
+  transition: all 0.5s;
 }
 header #navbar-container #max-nav a:last-child {
   position: relative;
@@ -243,7 +322,7 @@ header #navbar-container #max-nav .nav-link.active {
   font-family: Jost-med;
 }
 header #navbar-container #max-nav .nav-link:hover {
-  text-decoration: underline #CDA274 5px;
+  text-decoration: underline #CDA274 4px;
 }
 header #navbar-container #min-nav {
   display: none;
@@ -1386,6 +1465,57 @@ footer #copyright {
     justify-content: flex-start;
     align-items: flex-start;
   }
+}
+#banner-content {
+  transition: all 0.5s;
+}
+#banner-content button, #banner-content p, #banner-content div {
+  animation: slipToLeft-200 0.8s ease-out forwards;
+  transform: translateX(200px);
+  opacity: 0;
+}
+#banner-content p {
+  animation-delay: 0.2s;
+}
+#banner-content button {
+  animation-delay: 0.4s;
+}
+
+#work-container {
+  animation: slipToTop-200 0.5s ease-out forwards paused;
+}
+
+#aboutUS-content {
+  animation: slipToRight-100 0.5s ease-out forwards paused;
+}
+
+#aboutUS-image {
+  animation: slipToLeft-100 0.5s ease-out forwards paused;
+}
+
+#Testimonial {
+  animation: slipToTop-200 0.5s ease-out forwards paused;
+}
+
+#project-header {
+  animation: slipToBottom-100 0.5s ease-out both paused;
+}
+
+#project-content {
+  animation: slipToTop-200 0.5s ease-out both paused;
+}
+
+.Blog-header {
+  animation: slipToBottom-100 0.5s ease-out both paused;
+}
+
+#Blog-list > .Blog-card:nth-child(2n) {
+  animation: slipToTop-200 0.5s ease-out both paused;
+}
+
+#Blog-list > .Blog-card:nth-child(2n+1) {
+  animation: slipToTop-200 0.5s ease-out both paused;
+  animation-delay: 0.2s;
 }
 
 /*# sourceMappingURL=style.css.map */

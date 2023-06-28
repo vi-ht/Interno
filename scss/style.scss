@@ -2,27 +2,32 @@
 @import "layout.scss";
 @import "font.scss";
 @import "component.scss";
+@import "scrollbar.scss";
+@import "keyframe.scss";
 
 * {
     @include ResetCSS;
 }
 //slide-bar
-#slidebar-container {   
+#slidebar-container {
     @include FullScreenLayout(100vh);
     width: 100vw !important;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: transparent !important;
     position: absolute;
     z-index: 1000;
     top: 0;
     right: 0;
     display: none;
+    #slidebar-background {
+        @include StandardLayout(100%, 100%, rgba(0, 0, 0, 0.6));
+    }
     #slide-bar {
         @include StandardLayout(370px, 100vh, white);
         @include CenterLayout-vertical;
         position: absolute;
         z-index: 1010;
         top: 0;
-        right: 0;
+        right: -370px;
         box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.1);
         #slidebar-nav {
             @include StandardLayout(90%, 94%, white);
@@ -43,7 +48,7 @@
                     center
                 );
                 margin-bottom: 10px;
-                img{
+                img {
                     width: 150px;
                     height: auto;
                 }
@@ -55,7 +60,7 @@
                         transition: color 0.3s;
                     }
                     iconify-icon:hover {
-                        color: $primary-color-med
+                        color: $primary-color-med;
                     }
                 }
             }
@@ -100,6 +105,8 @@ header {
     @include FullScreenLayout(138px);
     padding-top: 43px;
     padding-bottom: 43px;
+    background-color: white;
+    transition: height 200ms;
     #navbar-container {
         @include StandardLayout($normal-width, 50px, transparent);
         @include SetUpFlexLayout(row, nowrap, 0, space-between, center);
@@ -110,16 +117,17 @@ header {
                 color: $primary-color-dark;
                 font-size: 20px;
                 font-family: Jost-regular;
+                transition: all 0.5s;
             }
             a:last-child {
                 position: relative;
                 top: 3px;
             }
-            .nav-link.active{
+            .nav-link.active {
                 font-family: $Jost-med;
             }
-            .nav-link:hover{
-                text-decoration: underline $primary-color-med 5px;
+            .nav-link:hover {
+                text-decoration: underline $primary-color-med 4px;
             }
         }
         #min-nav {
@@ -659,8 +667,9 @@ footer {
         text-align: center;
     }
 }
-$width: 90% !important;
-//-------------------------------------------------------------------------------------------------------------
+
+//-------------------------------------------------RESPONSIVE----------------------------------------------------
+
 @media screen and (max-width: 1200px) and (min-width: 0px) {
     header {
         @include FullScreenLayout(auto !important);
@@ -1012,4 +1021,60 @@ $width: 90% !important;
             flex-start
         );
     }
+}
+//-------------------------------------ANIMATION-----------------------------------------
+// Banner
+#banner-content {
+    transition: all 0.5s;
+    %banner-anim {
+        animation: slipToLeft-200 0.8s ease-out forwards;
+        transform: translateX(200px);
+        opacity: 0;
+    }
+    div {
+        @extend %banner-anim;
+    }
+    p {
+        @extend %banner-anim;
+        animation-delay: 0.2s;
+    }
+    button {
+        @extend %banner-anim;
+        animation-delay: 0.4s;
+    }
+}
+
+//work
+#work-container {
+    animation: slipToTop-200 0.5s ease-out forwards paused;
+}
+// about us
+
+#aboutUS-content {
+    animation: slipToRight-100 0.5s ease-out forwards paused;
+}
+#aboutUS-image {
+    animation: slipToLeft-100 0.5s ease-out forwards paused;
+}
+// Testimonial
+#Testimonial {
+    animation: slipToTop-200 0.5s ease-out forwards paused;
+}
+//project
+#project-header{
+    animation: slipToBottom-100 0.5s ease-out both paused;
+}
+#project-content{
+    animation: slipToTop-200 0.5s ease-out both paused;
+}
+// blog 
+.Blog-header{
+    animation: slipToBottom-100 0.5s ease-out both paused;
+}
+#Blog-list > .Blog-card:nth-child(2n){
+    animation: slipToTop-200 0.5s ease-out both paused; 
+}
+#Blog-list > .Blog-card:nth-child(2n+1){
+    animation: slipToTop-200 0.5s ease-out both paused;
+    animation-delay: 0.2s;
 }
