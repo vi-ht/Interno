@@ -5,12 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interno | Landing Page</title>
-    <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/x-icon" href="asset/image/favicon.png">
+    <!-- Import icon cdn -->
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <!-- Import Jquery cdn -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <!-- Import Easing cdn -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-    <script src="js/script.js" type="text/javascript" defer></script>
+    <!-- Import JS -->
+    <!-- <script src="js/script.js" type="text/javascript" defer></script> -->
+    <script src="js/index/observer.js" type="text/javascript" defer></script>
+    <script src="js/index/slidebar.js" type="text/javascript" defer></script>
+    <script src="js/index/randomNumber.js" type="text/javascript" defer></script>
+    <script src="js/index/script.js" type="text/javascript" defer></script>
+    <!-- Import CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -19,7 +28,7 @@
             <a href="index.html"><img src="asset/image/Logo.png" alt="logo" /></a>
             <nav id="max-nav">
                 <a href="index.html" class="nav-link active">Home</a>
-                <a href="#" class="nav-link">Pages</a>
+                <!-- <a href="#" class="nav-link">Pages</a> -->
                 <a href="service.html" class="nav-link">Services</a>
                 <a href="#" class="nav-link">Project</a>
                 <a href="#" class="nav-link">Blog</a>
@@ -43,15 +52,15 @@
                                 height="24"></iconify-icon>
                         </span>
                     </div>
-                    <div class="slidebar-line"></div>
+                    <!-- <div class="slidebar-line"></div> -->
                     <div class="slidebar-item active">
                         <iconify-icon icon="carbon:home" width="24" height="24"></iconify-icon>
                         <a href="index.html">Home</a>
                     </div>
-                    <div class="slidebar-item">
+                    <!-- <div class="slidebar-item">
                         <iconify-icon icon="iconoir:page-star" width="24" height="24"></iconify-icon>
                         <a href="#">Pages</a>
-                    </div>
+                    </div> -->
                     <div class="slidebar-item">
                         <iconify-icon icon="bytesize:work" width="24" height="24"></iconify-icon>
                         <a href="service.html">Services</a>
@@ -101,8 +110,8 @@
                     <div class="work-des">There are many variations of the passages of lorem Ipsum from
                         available, majority.</div>
                     <div class="work-read-more"><span>Read more</span>
-                        <span><iconify-icon icon="grommet-icons:form-next-link" width="33"
-                                height="30"></iconify-icon></span>
+                        <span><iconify-icon icon="grommet-icons:form-next-link" width="40"
+                            height="35"></iconify-icon></span>
                     </div>
                 </div>
                 <div class="work">
@@ -110,8 +119,8 @@
                     <div class="work-des">There are many variations of the passages of lorem Ipsum from
                         available, majority.</div>
                     <div class="work-read-more"><span>Read more</span>
-                        <span><iconify-icon icon="grommet-icons:form-next-link" width="33"
-                                height="30"></iconify-icon></span>
+                        <span><iconify-icon icon="grommet-icons:form-next-link" width="40"
+                                height="35"></iconify-icon></span>
                     </div>
                 </div>
                 <div class="work">
@@ -119,8 +128,8 @@
                     <div class="work-des">There are many variations of the passages of lorem Ipsum from
                         available, majority.</div>
                     <div class="work-read-more"><span>Read more</span>
-                        <span><iconify-icon icon="grommet-icons:form-next-link" width="30"
-                                height="27"></iconify-icon></span>
+                        <span><iconify-icon icon="grommet-icons:form-next-link" width="40"
+                            height="35"></iconify-icon></span>
                     </div>
                 </div>
 
@@ -317,7 +326,7 @@
                     <div class="Counter-content" id="YOE">12</div>
                     <div class="Counter-title">Years Of Experiance</div>
                 </div>
-                <div class="Counter-line" ></div>
+                <div class="Counter-line"></div>
                 <div class="Counter-item">
                     <div class="Counter-content" id="SP">85</div>
                     <div class="Counter-title">Success Project</div>
@@ -337,7 +346,7 @@
         <section id="Blog-container">
             <div id="Blog">
                 <div id="Blog-inner">
-                    <div class="Blog-header">
+                    <div id="Blog-header">
                         <div class="Blog-header-name">Articles & News</div>
                         <div class="Blog-header-description">It is a long established fact that a reader will be
                             distracted by the of readable content of a page when lookings at its layouts the points of

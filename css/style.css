@@ -36,13 +36,36 @@
   gap: 8px;
   justify-content: center;
   align-items: center;
+  transition: all ease-in-out 0.3s;
   position: relative;
 }
 #Contact-container #Contact button span:nth-child(2), #aboutUS-container #aboutUS #aboutUS-content button span:nth-child(2), #banner #main-banner #banner-content button span:nth-child(2) {
+  transition: inherit;
   color: #CDA274;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+#Contact-container #Contact button span:nth-child(2) iconify-icon, #aboutUS-container #aboutUS #aboutUS-content button span:nth-child(2) iconify-icon, #banner #main-banner #banner-content button span:nth-child(2) iconify-icon {
+  transition: inherit;
+}
+
+#aboutUS-container #aboutUS #aboutUS-content button:hover, #banner #main-banner #banner-content button:hover {
+  background-color: #CDA274;
+  color: white;
+}
+#aboutUS-container #aboutUS #aboutUS-content button:hover span iconify-icon, #banner #main-banner #banner-content button:hover span iconify-icon {
+  transform: translateX(10px);
+  color: #292F36;
+}
+
+#Contact-container #Contact button:hover {
+  background-color: white;
+  color: #292F36;
+}
+#Contact-container #Contact button:hover span iconify-icon {
+  transform: translateX(10px);
+  color: #CDA274;
 }
 
 #Counter-container #Counter .Counter-item .Counter-content {
@@ -52,7 +75,7 @@
   letter-spacing: 2%;
 }
 
-#Contact-container #Contact #Contact-content #Contact-title, #Blog-container #Blog #Blog-inner .Blog-header .Blog-header-name, #project-container #project #project-inner #project-header #project-header-name, #Testimonial-container #Testimonial #Testimonial-title, #aboutUS-container #aboutUS #aboutUS-content #content-title {
+#Contact-container #Contact #Contact-content #Contact-title, #Blog-container #Blog #Blog-inner #Blog-header .Blog-header-name, #project-container #project #project-inner #project-header #project-header-name, #Testimonial-container #Testimonial #Testimonial-title, #aboutUS-container #aboutUS #aboutUS-content #content-title {
   font-family: DMSerif-r;
   font-size: 50px;
   line-height: 125%;
@@ -73,7 +96,7 @@ footer #footer .footer-content .content-title, #Blog-container #Blog #Blog-inner
   letter-spacing: 2%;
 }
 
-footer #copyright, footer #footer .footer-content .content-link-list .content-link, footer #footer .footer-content #footer-slogan, #Contact-container #Contact #Contact-content #Contact-des, #Blog-container #Blog #Blog-inner .Blog-header .Blog-header-description, #Counter-container #Counter .Counter-item .Counter-title, #project-container #project #project-inner #project-content .project-card .project-card-info .project-card-header .project-card-type, #project-container #project #project-inner #project-header #project-header-description, #Testimonial-container #Testimonial #Testimonial-card-list .Testimonial-card .Testimonial-Content, #Testimonial-container #Testimonial #Testimonial-card-list .Testimonial-card .Testimonial-header .Testimonial-info .Testimonial-address, #aboutUS-container #aboutUS #aboutUS-content #content-des {
+footer #copyright, footer #footer .footer-content .content-link-list .content-link, footer #footer .footer-content #footer-slogan, #Contact-container #Contact #Contact-content #Contact-des, #Blog-container #Blog #Blog-inner #Blog-header .Blog-header-description, #Counter-container #Counter .Counter-item .Counter-title, #project-container #project #project-inner #project-content .project-card .project-card-info .project-card-header .project-card-type, #project-container #project #project-inner #project-header #project-header-description, #Testimonial-container #Testimonial #Testimonial-card-list .Testimonial-card .Testimonial-Content, #Testimonial-container #Testimonial #Testimonial-card-list .Testimonial-card .Testimonial-header .Testimonial-info .Testimonial-address, #aboutUS-container #aboutUS #aboutUS-content #content-des {
   font-family: Jost-regular;
   font-size: 22px;
   line-height: 150%;
@@ -253,6 +276,7 @@ footer #copyright, footer #footer .footer-content .content-link-list .content-li
   gap: 25px;
   justify-content: flex-start;
   align-items: center;
+  transition: all 0.5 ease-out;
   padding: 12px 18px;
   border-radius: 10px;
 }
@@ -274,6 +298,15 @@ footer #copyright, footer #footer .footer-content .content-link-list .content-li
 }
 #slidebar-container #slide-bar #slidebar-nav .slidebar-item.active iconify-icon {
   color: #F4F0EC;
+}
+#slidebar-container #slide-bar #slidebar-nav .slidebar-item:hover {
+  background-color: #F4F0EC;
+}
+#slidebar-container #slide-bar #slidebar-nav .slidebar-item:hover a {
+  color: #292F36;
+}
+#slidebar-container #slide-bar #slidebar-nav .slidebar-item:hover iconify-icon {
+  color: #292F36;
 }
 
 header {
@@ -371,6 +404,9 @@ header #navbar-container #min-nav a iconify-icon {
   line-height: 150%;
   margin-bottom: 21px;
 }
+#banner #main-banner #banner-content button {
+  cursor: pointer;
+}
 #work {
   width: 100%;
   height: 764px;
@@ -409,6 +445,8 @@ header #navbar-container #min-nav a iconify-icon {
   margin-bottom: 48px;
 }
 #work #work-container div.work-read-more {
+  cursor: pointer;
+  transition: all 0.3s ease-in;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -426,6 +464,17 @@ header #navbar-container #min-nav a iconify-icon {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: inherit;
+}
+#work #work-container div.work-read-more span:nth-child(2) iconify-icon {
+  transition: inherit;
+}
+#work #work-container div.work-read-more:hover {
+  color: #CDA274;
+}
+#work #work-container div.work-read-more:hover span:nth-child(2) iconify-icon {
+  transform: translateX(15px);
+  color: #292F36;
 }
 
 #aboutUS-container {
@@ -717,6 +766,7 @@ header #navbar-container #min-nav a iconify-icon {
   color: #4D5053;
 }
 #project-container #project #project-inner #project-content .project-card .project-card-info .project-card-seemore {
+  transition: 0.3s all ease;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -724,6 +774,10 @@ header #navbar-container #min-nav a iconify-icon {
   height: 70px;
   background-color: #F4F0EC;
   border-radius: 50%;
+  cursor: pointer;
+}
+#project-container #project #project-inner #project-content .project-card .project-card-info .project-card-seemore:hover {
+  box-shadow: 0px 0px 15px 5px rgba(205, 162, 116, 0.5);
 }
 #project-container #project #project-inner #project-content .project-card:nth-child(1) .project-card-image {
   border-top-right-radius: 80px;
@@ -786,7 +840,7 @@ header #navbar-container #min-nav a iconify-icon {
 
 #Blog-container {
   width: 100%;
-  height: 717px;
+  height: 737px;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -806,15 +860,18 @@ header #navbar-container #min-nav a iconify-icon {
   justify-content: center;
   align-items: center;
 }
-#Blog-container #Blog #Blog-inner .Blog-header {
+#Blog-container #Blog #Blog-inner #Blog-header {
   max-width: 811px;
 }
-#Blog-container #Blog #Blog-inner .Blog-header .Blog-header-name {
+#Blog-container #Blog #Blog-inner #Blog-header .Blog-header-name {
   text-align: center;
   margin-bottom: 10px;
 }
-#Blog-container #Blog #Blog-inner .Blog-header .Blog-header-description {
+#Blog-container #Blog #Blog-inner #Blog-header .Blog-header-description {
   text-align: center;
+}
+#Blog-container #Blog #Blog-inner #Blog-list > div:nth-child(2):hover {
+  box-shadow: 0px 0px 15px 5px rgba(205, 162, 116, 0.5);
 }
 #Blog-container #Blog #Blog-inner #Blog-list > div:nth-child(2) {
   width: 100%;
@@ -834,12 +891,17 @@ header #navbar-container #min-nav a iconify-icon {
   height: 521px;
   background-color: transparent;
 }
+#Blog-container #Blog #Blog-inner #Blog-list .Blog-card:hover {
+  box-shadow: 0px 0px 15px 10px #F4F0EC;
+}
 #Blog-container #Blog #Blog-inner #Blog-list .Blog-card {
+  cursor: pointer;
   width: 100%;
   grid-column: span 1;
   width: 100%;
   height: 100%;
   background-color: transparent;
+  transition: 0.3s ease-in;
   padding: 21px;
   border: 1px solid #E7E7E7;
   border-radius: 62px;
@@ -950,7 +1012,6 @@ header #navbar-container #min-nav a iconify-icon {
 #Contact-container #Contact button span iconify-icon {
   color: #292F36;
 }
-
 footer {
   width: 100%;
   height: 577px;
@@ -1505,17 +1566,19 @@ footer #copyright {
   animation: slipToTop-200 0.5s ease-out both paused;
 }
 
-.Blog-header {
+#Blog-header {
   animation: slipToBottom-100 0.5s ease-out both paused;
+  animation-delay: 0.2s;
 }
 
 #Blog-list > .Blog-card:nth-child(2n) {
   animation: slipToTop-200 0.5s ease-out both paused;
+  animation-delay: 0.4s;
 }
 
 #Blog-list > .Blog-card:nth-child(2n+1) {
   animation: slipToTop-200 0.5s ease-out both paused;
-  animation-delay: 0.2s;
+  animation-delay: 0.7s;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -74,6 +74,7 @@
             .slidebar-item {
                 @include StandardLayout(100%, auto, white);
                 @include SetUpFlexLayout(row, nowrap, 25px, flex-start, center);
+                transition: all 0.5 ease-out;
                 padding: 12px 18px;
                 border-radius: 10px;
                 a {
@@ -94,6 +95,15 @@
                 }
                 iconify-icon {
                     color: $primary-color-light;
+                }
+            }
+            .slidebar-item:hover {
+                background-color: $primary-color-light;
+                a {
+                    color: $primary-color-dark;
+                }
+                iconify-icon {
+                    color: $primary-color-dark;
                 }
             }
         }
@@ -167,6 +177,11 @@ header {
             }
             button {
                 @extend %button;
+                cursor: pointer;
+                
+            }
+            button:hover{
+                @extend %button-hover-dark;
             }
         }
     }
@@ -194,6 +209,8 @@ header {
             margin-bottom: 48px;
         }
         div.work-read-more {
+            cursor: pointer;
+            transition: all 0.3s ease-in;
             @include CenterLayout;
             @include SetUpFlexLayout(row, nowrap, 8px, center, center);
             font-family: $Jost-SemiBold;
@@ -201,6 +218,19 @@ header {
             span:nth-child(2) {
                 color: $primary-color-med;
                 @include CenterLayout;
+                transition: inherit;
+                iconify-icon{
+                    transition: inherit;
+                }
+            }
+        }
+        div.work-read-more:hover{
+            color: $primary-color-med;
+            span:nth-child(2) {
+                iconify-icon{
+                    transform: translateX(15px);
+                    color: $primary-color-dark;
+                }
             }
         }
     }
@@ -255,6 +285,9 @@ header {
             }
             button {
                 @extend %button;
+            }
+            button:hover{
+                @extend %button-hover-dark;
             }
         }
         #aboutUS-image {
@@ -416,6 +449,7 @@ header {
                             }
                         }
                         .project-card-seemore {
+                            transition: 0.3s all ease;
                             @include CenterLayout;
                             @include StandardLayout(
                                 70px,
@@ -423,6 +457,10 @@ header {
                                 $primary-color-light
                             );
                             border-radius: 50%;
+                            cursor: pointer;
+                        }
+                        .project-card-seemore:hover {
+                            box-shadow: 0px 0px 15px 5px $primary-color-med-70;
                         }
                     }
                 }
@@ -471,13 +509,13 @@ header {
 }
 //blog
 #Blog-container {
-    @include FullScreenLayout(717px);
+    @include FullScreenLayout(737px);
     margin-bottom: 200px;
     #Blog {
         @include StandardLayout($normal-width, 100%, transparent);
         #Blog-inner {
             @include SetUpFlexLayout(column, nowrap, 52px, center, center);
-            .Blog-header {
+            #Blog-header {
                 max-width: 811px;
                 .Blog-header-name {
                     @extend %heading01;
@@ -488,6 +526,9 @@ header {
                     @extend %regular-text;
                     text-align: center;
                 }
+            }
+            #Blog-list>div:nth-child(2):hover {
+                box-shadow: 0px 0px 15px 5px $primary-color-med-70;
             }
             #Blog-list > div:nth-child(2) {
                 @include StandardLayout(100%, 100%, $primary-color-light);
@@ -502,9 +543,14 @@ header {
             #Blog-list {
                 @include SetUpGridColumnLayout(repeat(3, auto), 27px);
                 @include StandardLayout(100%, 521px, transparent);
+                .Blog-card:hover{
+                    box-shadow: 0px 0px 15px 10px $primary-color-light;
+                }
                 .Blog-card {
+                    cursor: pointer;
                     @include SetUpGridItemSpan(100%, span 1);
                     @include StandardLayout(100%, 100%, transparent);
+                    transition: 0.3s ease-in;
                     padding: 21px;
                     border: 1px solid $neutral-color-lightgray;
                     border-radius: 62px;
@@ -606,13 +652,15 @@ header {
             @extend %button;
             background-color: $primary-color-med;
             color: white;
-
             span {
                 iconify-icon {
                     color: $primary-color-dark;
                 }
             }
             box-shadow: 0px 10px 20px 0px #1f2022;
+        }
+        button:hover{
+            @extend %button-hover-light;
         }
     }
 }
@@ -1068,13 +1116,15 @@ footer {
     animation: slipToTop-200 0.5s ease-out both paused;
 }
 // blog 
-.Blog-header{
+#Blog-header{
     animation: slipToBottom-100 0.5s ease-out both paused;
+    animation-delay: 0.2s;
 }
 #Blog-list > .Blog-card:nth-child(2n){
     animation: slipToTop-200 0.5s ease-out both paused; 
+    animation-delay: 0.4s;
 }
 #Blog-list > .Blog-card:nth-child(2n+1){
     animation: slipToTop-200 0.5s ease-out both paused;
-    animation-delay: 0.2s;
+    animation-delay: 0.7s;
 }

@@ -11,10 +11,35 @@
     line-height: 125%;
     box-shadow: 0px 10px 20px 0px #c0c0c059;
     @include SetUpFlexLayout(row, nowrap, 8px, center, center);
+    transition: all ease-in-out 0.3s;
     position: relative;
     span:nth-child(2) {
+        transition: inherit;
         color: $primary-color-med;
         @include CenterLayout;
+        iconify-icon {
+            transition: inherit;
+        }
+    }
+}
+%button-hover-dark {
+    background-color: $primary-color-med;
+    color: white;
+    span {
+        iconify-icon {
+            transform: translateX(10px);
+            color: $primary-color-dark;
+        }
+    }
+}
+%button-hover-light {
+    background-color: white;
+    color: $primary-color-dark;
+    span {
+        iconify-icon {
+            transform: translateX(10px);
+            color: $primary-color-med;
+        }
     }
 }
 %heading {
