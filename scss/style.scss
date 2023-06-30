@@ -8,6 +8,7 @@
 * {
     @include ResetCSS;
 }
+
 //slide-bar
 #slidebar-container {
     @include FullScreenLayout(100vh);
@@ -152,7 +153,8 @@ header {
 }
 // Banner
 #banner {
-    @include ImageFullScreenLayout(url(../asset/image/Image.png), 1042px);
+    // @include ImageFullScreenLayout(url(../asset/image/Image.png), 1042px);
+    @include ImageFullScreenLayout(url(../asset/image/image_optimized.png), 1042px);
     border-bottom-left-radius: 291px;
     #main-banner {
         @include StandardLayout($normal-width, auto, transparent);
