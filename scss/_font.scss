@@ -1,21 +1,26 @@
 @font-face {
     font-family: DMSerif-r;
+    font-display: swap;
     src: url(../asset/font/DM_Serif_Display/DMSerifDisplay-Regular.ttf);
 }
 @font-face {
     font-family: Jost-regular;
+    font-display: swap;
     src: url(../asset/font/Jost/static/Jost-Regular.ttf);
 }
 @font-face {
     font-family: Jost-med;
+    font-display: swap;
     src: url(../asset/font/Jost/static/Jost-Medium.ttf);
 }
 @font-face {
     font-family: Jost-SemiBold;
+    font-display: swap;
     src: url(../asset/font/Jost/static/Jost-SemiBold.ttf);
 }
 @font-face {
     font-family: Jost-Bold;
+    font-display: swap;
     src: url(../asset/font/Jost/static/Jost-Bold.ttf);
 }
 $DMSerif-r: DMSerif-r;

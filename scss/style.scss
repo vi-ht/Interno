@@ -154,7 +154,7 @@ header {
 // Banner
 #banner {
     // @include ImageFullScreenLayout(url(../asset/image/Image.png), 1042px);
-    @include ImageFullScreenLayout(url(../asset/image/image_optimized.png), 1042px);
+    @include ImageFullScreenLayout(url(../asset/image/image_optimized.webp), 1042px);
     border-bottom-left-radius: 291px;
     #main-banner {
         @include StandardLayout($normal-width, auto, transparent);
@@ -1004,7 +1004,7 @@ footer {
         @include StandardLayout(100% !important, 100vh, white);
     }
     #banner {
-        @include ImageFullScreenLayout(url(../asset/image/Image.png), 1042px);
+        @include ImageFullScreenLayout(url(../asset/image/image_optimized.webp), 1042px);
         border-bottom-left-radius: 150px !important;
     }
     #project-inner {

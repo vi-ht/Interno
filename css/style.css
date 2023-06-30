@@ -371,7 +371,7 @@ header #navbar-container #min-nav a iconify-icon {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(../asset/image/image_optimized.png);
+  background-image: url(../asset/image/image_optimized.webp);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
@@ -1447,7 +1447,7 @@ footer #copyright {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(../asset/image/Image.png);
+    background-image: url(../asset/image/Image.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
