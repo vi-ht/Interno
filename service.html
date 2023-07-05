@@ -4,28 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interno | Services</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" type="image/x-icon" href="asset/image/favicon.webp">
+    <title>Interno | service</title>
+    <meta name="description"
+        content="Interno is a website for presenting interior design with a delightful and captivating experience.">
+    <link rel="icon" type="image/x-icon" href="asset/image/favicon.png">
+    <!-- Import icon cdn -->
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <!-- Import Jquery cdn -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <!-- Import Easing cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     <!-- Import JS -->
-    <script src="js/script.js" type="text/javascript" defer></script>
-    <script src="js/script.js" type="text/javascript" defer></script>
+    <!-- <script src="js/script.js" type="text/javascript" defer></script> -->
+    <script src="js/service/observer.js" type="text/javascript" defer></script>
+    <script src="js/index/slidebar.js" type="text/javascript" defer></script>
+    <script src="js/index/script.js" type="text/javascript" defer></script>
+    <!-- Import CSS -->
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <link rel="stylesheet" href="css/service.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
 </head>
 
 <body>
     <header id="header">
         <div id="navbar-container">
-            <img src="asset/image/Logo.webp" alt="logo" />
+            <a href="index.html"><img src="asset/image/Logo.webp" alt="logo" width="auto" height="auto" /></a>
             <nav id="max-nav">
-                <a href="index.html">Home</a>
-                <a href="#">Pages</a>
-                <a href="service.html">Services</a>
-                <a href="#">Project</a>
-                <a href="#">Blog</a>
-                <a href="#">Contact</a>
-                <a href="#"><iconify-icon icon="iconoir:search" width="24" height="24"></iconify-icon></a>
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="service.html" class="nav-link active">Services</a>
+                <a href="#" class="nav-link">Project</a>
+                <a href="#" class="nav-link">Blog</a>
+                <a href="#" class="nav-link">Contact</a>
+                <a href="#" class="nav-link"><iconify-icon icon="iconoir:search" width="24"
+                        height="24"></iconify-icon></a>
             </nav>
             <nav id="min-nav">
                 <a href="#"> <iconify-icon icon="solar:hamburger-menu-line-duotone" width="40"
@@ -33,8 +45,8 @@
             </nav>
         </div>
         <div id="slidebar-container">
+            <div id="slidebar-background"></div>
             <div id="slide-bar">
-
                 <nav id="slidebar-nav">
                     <div class="slidebar-title">
                         <img src="asset/image/Logo.webp" alt="logo" />
@@ -43,16 +55,11 @@
                                 height="24"></iconify-icon>
                         </span>
                     </div>
-                    <div class="slidebar-line"></div>
-                    <div class="slidebar-item ">
+                    <div class="slidebar-item">
                         <iconify-icon icon="carbon:home" width="24" height="24"></iconify-icon>
                         <a href="index.html">Home</a>
                     </div>
                     <div class="slidebar-item active">
-                        <iconify-icon icon="iconoir:page-star" width="24" height="24"></iconify-icon>
-                        <a href="#">Pages</a>
-                    </div>
-                    <div class="slidebar-item">
                         <iconify-icon icon="bytesize:work" width="24" height="24"></iconify-icon>
                         <a href="service.html">Services</a>
                     </div>
@@ -70,8 +77,7 @@
                         <a href="#">Contact</a>
                     </div>
                     <div class="slidebar-item">
-                        <iconify-icon icon="iconoir:search"
-                            width="24" height="24"></iconify-icon>
+                        <iconify-icon icon="iconoir:search" width="24" height="24"></iconify-icon>
                         <a href="#">Search</a>
                     </div>
                     <!-- <a href="#"><iconify-icon icon="iconoir:search" width="24" height="24"></iconify-icon></a> -->
@@ -79,8 +85,189 @@
             </div>
         </div>
     </header>
-    <main id="">
-        
+    <main id="main">
+        <section id="banner">
+            <div id="banner-container">
+                <div id="banner-content">
+                    <h1 id="banner-title">Services</h1>
+                    <div id="banner-breadcrumbs">
+                        <a href="#">Home</a>
+                        <div>/</div>
+                        <a href="#">Services</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="work">
+            <div id="work-container">
+                <div class="work" >
+                    <div class="work-name">Project Plan</div>
+                    <div class="work-des">There are many variations of the passages of lorem Ipsum from
+                        available, majority.</div>
+                    <div class="work-read-more"><span>Read more</span>
+                        <span><iconify-icon icon="grommet-icons:form-next-link" width="40"
+                                height="35"></iconify-icon></span>
+                    </div>
+                </div>
+                <div class="work">
+                    <div class="work-name">Interior Work</div>
+                    <div class="work-des">There are many variations of the passages of lorem Ipsum from
+                        available, majority.</div>
+                    <div class="work-read-more"><span>Read more</span>
+                        <span><iconify-icon icon="grommet-icons:form-next-link" width="40"
+                                height="35"></iconify-icon></span>
+                    </div>
+                </div>
+                <div class="work">
+                    <div class="work-name">Realization</div>
+                    <div class="work-des">There are many variations of the passages of lorem Ipsum from
+                        available, majority.</div>
+                    <div class="work-read-more"><span>Read more</span>
+                        <span><iconify-icon icon="grommet-icons:form-next-link" width="40"
+                                height="35"></iconify-icon></span>
+                    </div>
+                </div>
+                <div class="work">
+                    <div class="work-name">Realization</div>
+                    <div class="work-des">There are many variations of the passages of lorem Ipsum from
+                        available, majority.</div>
+                    <div class="work-read-more"><span>Read more</span>
+                        <span><iconify-icon icon="grommet-icons:form-next-link" width="40"
+                                height="35"></iconify-icon></span>
+                    </div>
+                </div>
+                <div class="work" id="work-special">
+                    <div class="work-name">Realization</div>
+                    <div class="work-des">There are many variations of the passages of lorem Ipsum from
+                        available, majority.</div>
+                    <div class="work-read-more"><span>Read more</span>
+                        <span><iconify-icon icon="grommet-icons:form-next-link" width="40"
+                                height="35"></iconify-icon></span>
+                    </div>
+                </div>
+                <div class="work">
+                    <div class="work-name">Realization</div>
+                    <div class="work-des">There are many variations of the passages of lorem Ipsum from
+                        available, majority.</div>
+                    <div class="work-read-more"><span>Read more</span>
+                        <span><iconify-icon icon="grommet-icons:form-next-link" width="40"
+                                height="35"></iconify-icon></span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <section id="how-we-work">
+            <div id="hww-container">
+                <div id="hww-header">
+                    <h2 id="hww-header-title">How We Work</h2>
+                    <p id="hww-header-des">It is a long established fact will be distracted.Lorem Ipsum is simply dummy
+                        text of the printing and typesetting industry.</p>
+                </div>
+                <div id="hww-list">
+                    <div class="hww-step-container">
+                        <div class="hww-step-img">
+                            <img src="asset/image/service-page/Photo01.webp" alt="photo01">
+                        </div>
+                        <div class="hww-step-main">
+                            <div class="hww-step-main-container">
+                                <div class="hww-step-visual">
+                                    <div class="hww-step-icon">
+                                        <img src="asset/image/service-page/Icon01.png" alt="icon01">
+                                    </div>
+                                    <div class="hww-step-no">01</div>
+                                </div>
+                                <div class="hww-step-content">
+                                    <h3 class="hww-step-title">Concept & Details</h3>
+                                    <p class="hww-step-des">It is a long established fact will be distracted.
+                                        Lorem Ipsum is simply dummy from text of the
+                                        and typesetting indufstry. </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hww-line"></div>
+                    <div class="hww-step-container">
+                        <div class="hww-step-main">
+                            <div class="hww-step-main-container">
+                                <div class="hww-step-visual">
+                                    <div class="hww-step-icon">
+                                        <img src="asset/image/service-page/Icon02.png" alt="icon02">
+                                    </div>
+                                    <div class="hww-step-no">02</div>
+                                </div>
+                                <div class="hww-step-content">
+                                    <h3 class="hww-step-title">Idea for Work</h3>
+                                    <p class="hww-step-des">It is a long established fact will be distracted.
+                                        Lorem Ipsum is simply dummy from text of the
+                                        and typesetting indufstry. </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hww-step-img">
+                            <img src="asset/image/service-page/Photo02.webp" alt="photo02">
+                        </div>
+                    </div>
+                    <div class="hww-line"></div>
+                    <div class="hww-step-container">
+                        <div class="hww-step-img">
+                            <img src="asset/image/service-page/Photo03.webp" alt="photo03">
+                        </div>
+                        <div class="hww-step-main">
+                            <div class="hww-step-main-container">
+                                <div class="hww-step-visual">
+                                    <div class="hww-step-icon">
+                                        <img src="asset/image/service-page/Icon03.png" alt="icon03">
+                                    </div>
+                                    <div class="hww-step-no">03</div>
+                                </div>
+                                <div class="hww-step-content">
+                                    <h3 class="hww-step-title">Design</h3>
+                                    <p class="hww-step-des">It is a long established fact will be distracted.
+                                        Lorem Ipsum is simply dummy from text of the
+                                        and typesetting indufstry. </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hww-line"></div>
+                    <div class="hww-step-container">
+                        <div class="hww-step-main">
+                            <div class="hww-step-main-container">
+                                <div class="hww-step-visual">
+                                    <div class="hww-step-icon">
+                                        <img src="asset/image/service-page/Icon04.png" alt="icon04">
+                                    </div>
+                                    <div class="hww-step-no">04</div>
+                                </div>
+                                <div class="hww-step-content">
+                                    <h3 class="hww-step-title">Perfection</h3>
+                                    <p class="hww-step-des">It is a long established fact will be distracted.
+                                        Lorem Ipsum is simply dummy from text of the
+                                        and typesetting indufstry. </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hww-step-img">
+                            <img src="asset/image/service-page/Photo04.jpg" alt="photo04">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="Contact-container">
+            <div id="Contact">
+                <div id="Contact-content">
+                    <div id="Contact-title">Wanna join the interno?</div>
+                    <div id="Contact-des">It is a long established fact will be distracted.</div>
+                </div>
+                <button>
+                    <span>Contact With Us</span>
+                    <span><iconify-icon icon="grommet-icons:form-next-link" width="33"
+                            height="30"></iconify-icon></span>
+                </button>
+            </div>
+        </section>
     </main>
     <footer>
         <section id="footer">

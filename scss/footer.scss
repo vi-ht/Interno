@@ -1,0 +1,177 @@
+@import "variable.scss";
+@import "layout.scss";
+@import "font.scss";
+@import "component.scss";
+@import "scrollbar.scss";
+
+//footer
+footer {
+    @include FullScreenLayout(577px);
+    margin-bottom: 46px;
+    @include SetUpFlexLayout(column, nowrap, 134px, space-between, center);
+    #footer {
+        @include StandardLayout($normal-width, 100%, transparent);
+        @include SetUpGridColumnLayout(393px 125px 120px 258px, 101px);
+        .footer-content {
+            @include SetUpGridItemSpan(100%, span 1);
+            @include SetUpFlexLayout(
+                column,
+                wrap,
+                33px,
+                flex-start,
+                flex-start
+            );
+            .content-title {
+                @extend %heading03;
+            }
+            #footer-slogan {
+                @extend %regular-text;
+                color: $neutral-color-gray;
+                word-break: keep-all !important;
+            }
+            #footer-social {
+                @include SetUpFlexLayout(row, nowrap, 54px, flex-start, center);
+            }
+            .content-link-list {
+                @include SetUpFlexLayout(
+                    column,
+                    nowrap,
+                    41px,
+                    flex-start,
+                    flex-start
+                );
+                .content-link {
+                    @extend %regular-text;
+                    letter-spacing: 1%;
+                    color: $neutral-color-gray;
+                }
+            }
+        }
+    }
+    #copyright {
+        @include StandardLayout($normal-width, 100%, transparent);
+        @extend %regular-text;
+        color: $neutral-color-gray;
+        text-align: center;
+    }
+}
+
+//-------------------------------------------------RESPONSIVE----------------------------------------------------
+
+@media screen and (max-width: 1200px) and (min-width: 0px) {
+    footer {
+        @include FullScreenLayout(auto !important);
+        @include SetUpFlexLayout(
+            column,
+            nowrap,
+            50px !important,
+            space-between,
+            center
+        );
+        #footer,
+        #copyright {
+            @include StandardLayout($width, 100%, transparent);
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    #footer {
+        @include SetUpGridColumnLayout(
+            repeat(11, auto) !important,
+            60px !important
+        );
+    }
+    #footer div:nth-child(1) {
+        @include SetUpGridItemSpan(100%, span 4);
+    }
+    #footer div:nth-child(2) {
+        @include SetUpGridItemSpan(100%, span 2);
+    }
+    #footer div:nth-child(3) {
+        @include SetUpGridItemSpan(100%, span 2);
+    }
+    #footer div:nth-child(4) {
+        @include SetUpGridItemSpan(100%, span 3);
+    }
+}
+@media screen and (max-width: 992px) {
+    #footer {
+        @include SetUpGridColumnLayout(
+            repeat(12, auto) !important,
+            60px !important
+        );
+    }
+    #footer div:nth-child(1) {
+        @include SetUpGridItemSpan(100%, span 12);
+    }
+    #footer div:nth-child(2) {
+        @include SetUpGridItemSpan(100%, span 3);
+    }
+    #footer div:nth-child(3) {
+        @include SetUpGridItemSpan(100%, span 3);
+    }
+    #footer div:nth-child(4) {
+        @include SetUpGridItemSpan(100%, span 6);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #footer {
+        display: grid !important;
+        @include SetUpGridColumnLayout(
+            repeat(3, auto) !important,
+            100px !important
+        );
+    }
+    #footer div:nth-child(1) {
+        @include SetUpGridItemSpan(100%, span 3);
+    }
+    #footer div:nth-child(2) {
+        @include SetUpGridItemSpan(100%, span 1);
+    }
+    #footer div:nth-child(3) {
+        @include SetUpGridItemSpan(100%, span 1);
+    }
+    #footer div:nth-child(4) {
+        @include SetUpGridItemSpan(100%, span 3);
+    }
+    .content-link-list {
+        @include SetUpFlexLayout(
+            column,
+            nowrap,
+            30px !important,
+            flex-start,
+            flex-start
+        );
+    }
+}
+@media screen and (max-width: 576px) {
+    #footer {
+        @include SetUpGridColumnLayout(
+            repeat(2, auto) !important,
+            60px !important
+        );
+    }
+    #footer div:nth-child(1) {
+        @include SetUpGridItemSpan(100%, span 2);
+    }
+    #footer div:nth-child(2) {
+        @include SetUpGridItemSpan(100%, span 1);
+    }
+    #footer div:nth-child(3) {
+        @include SetUpGridItemSpan(100%, span 1);
+    }
+    #footer div:nth-child(4) {
+        @include SetUpGridItemSpan(100%, span 2);
+    }
+    .content-link-list {
+        @include SetUpFlexLayout(
+            column,
+            nowrap,
+            25px !important,
+            flex-start,
+            flex-start
+        );
+    }
+}

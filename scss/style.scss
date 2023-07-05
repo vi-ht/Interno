@@ -9,152 +9,13 @@
     @include ResetCSS;
 }
 
-//slide-bar
-#slidebar-container {
-    @include FullScreenLayout(100vh);
-    width: 100vw !important;
-    background-color: transparent !important;
-    position: absolute;
-    z-index: 1000;
-    top: 0;
-    right: 0;
-    display: none;
-    #slidebar-background {
-        @include StandardLayout(100%, 100%, rgba(0, 0, 0, 0.6));
-    }
-    #slide-bar {
-        @include StandardLayout(370px, 100vh, white);
-        @include CenterLayout-vertical;
-        position: absolute;
-        z-index: 1010;
-        top: 0;
-        right: -370px;
-        box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.1);
-        #slidebar-nav {
-            @include StandardLayout(90%, 94%, white);
-            @include SetUpFlexLayout(
-                column,
-                nowrap,
-                10px,
-                flex-start,
-                flex-start
-            );
-            .slidebar-title {
-                @include StandardLayout(100%, auto, white);
-                @include SetUpFlexLayout(
-                    row,
-                    nowrap,
-                    25px,
-                    space-between,
-                    center
-                );
-                margin-bottom: 10px;
-                img {
-                    width: 150px;
-                    height: auto;
-                }
-                #close-button {
-                    padding: 8px;
-                    @include CenterLayout;
-                    iconify-icon {
-                        cursor: pointer;
-                        transition: color 0.3s;
-                    }
-                    iconify-icon:hover {
-                        color: $primary-color-med;
-                    }
-                }
-            }
-            .slidebar-line {
-                width: 100%;
-                height: 1px;
-                background-color: $neutral-color-gray;
-                margin-bottom: 10px;
-                opacity: 0.5;
-            }
-            .slidebar-item {
-                @include StandardLayout(100%, auto, white);
-                @include SetUpFlexLayout(row, nowrap, 25px, flex-start, center);
-                transition: all 0.5 ease-out;
-                padding: 12px 18px;
-                border-radius: 10px;
-                a {
-                    text-decoration: none;
-                    color: $primary-color-dark;
-                    font-size: 20px;
-                    font-family: Jost-regular;
-                }
-                iconify-icon {
-                    color: $primary-color-dark;
-                }
-            }
-            .slidebar-item.active {
-                background-color: $primary-color-med;
-                a {
-                    color: $primary-color-light;
-                    font-family: $Jost-med;
-                }
-                iconify-icon {
-                    color: $primary-color-light;
-                }
-            }
-            .slidebar-item:hover {
-                background-color: $primary-color-light;
-                a {
-                    color: $primary-color-dark;
-                }
-                iconify-icon {
-                    color: $primary-color-dark;
-                }
-            }
-        }
-    }
-}
-
-// Header
-header {
-    @include FullScreenLayout(138px);
-    padding-top: 43px;
-    padding-bottom: 43px;
-    background-color: white;
-    transition: height 200ms;
-    #navbar-container {
-        @include StandardLayout($normal-width, 50px, transparent);
-        @include SetUpFlexLayout(row, nowrap, 0, space-between, center);
-        #max-nav {
-            @include SetUpFlexLayout(row, nowrap, 40px, flex-end, center);
-            .nav-link {
-                text-decoration: none;
-                color: $primary-color-dark;
-                font-size: 20px;
-                font-family: Jost-regular;
-                transition: all 0.5s;
-            }
-            a:last-child {
-                position: relative;
-                top: 3px;
-            }
-            .nav-link.active {
-                font-family: $Jost-med;
-            }
-            .nav-link:hover {
-                text-decoration: underline $primary-color-med 4px;
-            }
-        }
-        #min-nav {
-            display: none;
-            a {
-                iconify-icon {
-                    color: $primary-color-dark;
-                }
-            }
-        }
-    }
-}
 // Banner
 #banner {
     // @include ImageFullScreenLayout(url(../asset/image/Image.png), 1042px);
-    @include ImageFullScreenLayout(url(../asset/image/image_optimized.webp), 1042px);
+    @include ImageFullScreenLayout(
+        url(../asset/image/image_optimized.webp),
+        1042px
+    );
     border-bottom-left-radius: 291px;
     #main-banner {
         @include StandardLayout($normal-width, auto, transparent);
@@ -180,9 +41,8 @@ header {
             button {
                 @extend %button;
                 cursor: pointer;
-                
             }
-            button:hover{
+            button:hover {
                 @extend %button-hover-dark;
             }
         }
@@ -203,12 +63,15 @@ header {
             font-family: $DMSerif-r;
             font-size: 25px;
             margin-bottom: 20px;
+            text-align: center;
         }
         div.work-des {
             font-family: $Jost-regular;
             line-height: 150%;
             font-size: 22px;
             margin-bottom: 48px;
+            text-align: center;
+            // padding: 0px 10px;
         }
         div.work-read-more {
             cursor: pointer;
@@ -221,15 +84,15 @@ header {
                 color: $primary-color-med;
                 @include CenterLayout;
                 transition: inherit;
-                iconify-icon{
+                iconify-icon {
                     transition: inherit;
                 }
             }
         }
-        div.work-read-more:hover{
+        div.work-read-more:hover {
             color: $primary-color-med;
             span:nth-child(2) {
-                iconify-icon{
+                iconify-icon {
                     transform: translateX(15px);
                     color: $primary-color-dark;
                 }
@@ -288,7 +151,7 @@ header {
             button {
                 @extend %button;
             }
-            button:hover{
+            button:hover {
                 @extend %button-hover-dark;
             }
         }
@@ -366,7 +229,6 @@ header {
         }
     }
 }
-
 //Client-Logo
 #Client-Logo-container {
     @include FullScreenLayout(auto);
@@ -529,7 +391,7 @@ header {
                     text-align: center;
                 }
             }
-            #Blog-list>div:nth-child(2):hover {
+            #Blog-list > div:nth-child(2):hover {
                 box-shadow: 0px 0px 15px 5px $primary-color-med-70;
             }
             #Blog-list > div:nth-child(2) {
@@ -545,7 +407,7 @@ header {
             #Blog-list {
                 @include SetUpGridColumnLayout(repeat(3, auto), 27px);
                 @include StandardLayout(100%, 521px, transparent);
-                .Blog-card:hover{
+                .Blog-card:hover {
                     box-shadow: 0px 0px 15px 10px $primary-color-light;
                 }
                 .Blog-card {
@@ -661,81 +523,23 @@ header {
             }
             box-shadow: 0px 10px 20px 0px #1f2022;
         }
-        button:hover{
+        button:hover {
             @extend %button-hover-light;
         }
-    }
-}
-//footer
-footer {
-    @include FullScreenLayout(577px);
-    margin-bottom: 46px;
-    @include SetUpFlexLayout(column, nowrap, 134px, space-between, center);
-    #footer {
-        @include StandardLayout($normal-width, 100%, transparent);
-        @include SetUpGridColumnLayout(393px 125px 120px 258px, 101px);
-        .footer-content {
-            @include SetUpGridItemSpan(100%, span 1);
-            @include SetUpFlexLayout(
-                column,
-                wrap,
-                33px,
-                flex-start,
-                flex-start
-            );
-            .content-title {
-                @extend %heading03;
-            }
-            #footer-slogan {
-                @extend %regular-text;
-                color: $neutral-color-gray;
-                word-break: keep-all !important;
-            }
-            #footer-social {
-                @include SetUpFlexLayout(row, nowrap, 54px, flex-start, center);
-            }
-            .content-link-list {
-                @include SetUpFlexLayout(
-                    column,
-                    nowrap,
-                    41px,
-                    flex-start,
-                    flex-start
-                );
-                .content-link {
-                    @extend %regular-text;
-                    letter-spacing: 1%;
-                    color: $neutral-color-gray;
-                }
-            }
-        }
-    }
-    #copyright {
-        @include StandardLayout($normal-width, 100%, transparent);
-        @extend %regular-text;
-        color: $neutral-color-gray;
-        text-align: center;
     }
 }
 
 //-------------------------------------------------RESPONSIVE----------------------------------------------------
 
 @media screen and (max-width: 1200px) and (min-width: 0px) {
-    header {
-        @include FullScreenLayout(auto !important);
-        padding-top: 20px !important;
-        padding-bottom: 20px !important;
-        #navbar-container {
-            @include StandardLayout($width, 50px, transparent);
-        }
-    }
+    //banner (max-width: 1200px) and (min-width: 0px)
     #main-banner {
         @include StandardLayout($width, auto, transparent);
         #banner-content {
             font-family: $DMSerif-r;
         }
     }
-    //work
+    //work (max-width: 1200px) and (min-width: 0px)
     #work {
         @include FullScreenLayout(auto !important);
         #work-container {
@@ -743,30 +547,35 @@ footer {
             @include StandardLayout($width, auto !important, transparent);
         }
     }
+    //about us (max-width: 1200px) and (min-width: 0px)
     #aboutUS {
         @include StandardLayout($width, auto, transparent);
         #aboutUS-content {
             @include StandardLayout(472px, auto !important, transparent);
         }
     }
+    // Testimonial (max-width: 1200px) and (min-width: 0px)
     #Testimonial-container {
         @include FullScreenLayout(auto !important);
         #Testimonial {
             @include StandardLayout($width, 100%, $primary-color-light);
         }
     }
+    //project (max-width: 1200px) and (min-width: 0px)
     #project-container {
         @include FullScreenLayout(auto !important);
         #project {
             @include StandardLayout($width, auto, transparent);
         }
     }
+    //counter (max-width: 1200px) and (min-width: 0px)
     #Counter-container {
         #Counter {
             @include StandardLayout($width, auto, transparent);
             padding: 0px !important;
         }
     }
+    //blog (max-width: 1200px) and (min-width: 0px)
     #Blog-container {
         @include FullScreenLayout(auto !important);
         margin-bottom: 200px;
@@ -779,42 +588,23 @@ footer {
             }
         }
     }
+    //contact (max-width: 1200px) and (min-width: 0px)
     #Contact-container {
         @include FullScreenLayout(auto !important);
-
         #Contact {
             padding: 80px 10px;
             @include StandardLayout($width, 100%, $primary-color-dark);
         }
     }
-    footer {
-        @include FullScreenLayout(auto !important);
-        @include SetUpFlexLayout(
-            column,
-            nowrap,
-            50px !important,
-            space-between,
-            center
-        );
-        #footer,
-        #copyright {
-            @include StandardLayout($width, 100%, transparent);
-        }
-    }
 }
 @media screen and (max-width: 992px) and (min-width: 0px) {
-    #max-nav {
-        display: none !important;
-    }
-    #min-nav {
-        display: flex !important;
-        @include SetUpFlexLayout(row, nowrap, 40px, flex-end, center);
-    }
+    //banner (max-width: 992px) and (min-width: 0px)
     #banner {
         height: calc(100vh - 90px) !important;
     }
 }
 @media screen and (max-width: 1200px) {
+    //client - logo
     #Client-Logo-inner {
         @include SetUpFlexLayout(
             row,
@@ -824,26 +614,9 @@ footer {
             center
         );
     }
-    #footer {
-        @include SetUpGridColumnLayout(
-            repeat(11, auto) !important,
-            60px !important
-        );
-    }
-    #footer div:nth-child(1) {
-        @include SetUpGridItemSpan(100%, span 4);
-    }
-    #footer div:nth-child(2) {
-        @include SetUpGridItemSpan(100%, span 2);
-    }
-    #footer div:nth-child(3) {
-        @include SetUpGridItemSpan(100%, span 2);
-    }
-    #footer div:nth-child(4) {
-        @include SetUpGridItemSpan(100%, span 3);
-    }
 }
 @media screen and (max-width: 992px) {
+    //about us (max-width: 992px)
     #aboutUS-container {
         @include FullScreenLayout(auto !important);
         #aboutUS {
@@ -870,6 +643,7 @@ footer {
             }
         }
     }
+    //Testimonial (max-width: 992px)
     #Testimonial-container {
         @include FullScreenLayout(auto !important);
         #Testimonial {
@@ -881,7 +655,7 @@ footer {
             }
         }
     }
-    //work
+    //work (max-width: 992px)
     #work-container {
         @include SetUpFlexLayout(
             column !important,
@@ -894,10 +668,12 @@ footer {
             margin-bottom: 20px !important;
         }
     }
+    //project (max-width: 992px)
     #project-content {
         column-gap: 50px !important;
         row-gap: 50px !important;
     }
+    //counter (max-width: 992px)
     #Counter-container {
         @include FullScreenLayout(auto !important);
         #Counter {
@@ -919,6 +695,7 @@ footer {
             display: none !important;
         }
     }
+    //blog (max-width: 992px)
     #Blog-list {
         @include SetUpGridColumnLayout(repeat(1, auto) !important, 27px);
         @include StandardLayout(100%, auto !important, transparent);
@@ -947,66 +724,23 @@ footer {
             }
         }
     }
-    #footer {
-        @include SetUpGridColumnLayout(
-            repeat(12, auto) !important,
-            60px !important
-        );
-    }
-    #footer div:nth-child(1) {
-        @include SetUpGridItemSpan(100%, span 12);
-    }
-    #footer div:nth-child(2) {
-        @include SetUpGridItemSpan(100%, span 3);
-    }
-    #footer div:nth-child(3) {
-        @include SetUpGridItemSpan(100%, span 3);
-    }
-    #footer div:nth-child(4) {
-        @include SetUpGridItemSpan(100%, span 6);
-    }
 }
 @media screen and (max-width: 768px) {
+    //project (max-width: 768px)
     #project-content {
         @include SetUpGridColumnRowLayout(repeat(1, 1fr) !important, 20px, 4);
     }
-    #footer {
-        display: grid !important;
-        @include SetUpGridColumnLayout(
-            repeat(3, auto) !important,
-            100px !important
-        );
-    }
-    #footer div:nth-child(1) {
-        @include SetUpGridItemSpan(100%, span 3);
-    }
-    #footer div:nth-child(2) {
-        @include SetUpGridItemSpan(100%, span 1);
-    }
-    #footer div:nth-child(3) {
-        @include SetUpGridItemSpan(100%, span 1);
-    }
-    #footer div:nth-child(4) {
-        @include SetUpGridItemSpan(100%, span 3);
-    }
-    .content-link-list {
-        @include SetUpFlexLayout(
-            column,
-            nowrap,
-            30px !important,
-            flex-start,
-            flex-start
-        );
-    }
 }
 @media screen and (max-width: 576px) {
-    #slide-bar {
-        @include StandardLayout(100% !important, 100vh, white);
-    }
+    //banner (max-width: 576px)
     #banner {
-        @include ImageFullScreenLayout(url(../asset/image/image_optimized.webp), 1042px);
+        @include ImageFullScreenLayout(
+            url(../asset/image/image_optimized.webp),
+            1042px
+        );
         border-bottom-left-radius: 150px !important;
     }
+    //project (max-width: 576px)
     #project-inner {
         @include SetUpFlexLayout(
             column,
@@ -1019,11 +753,13 @@ footer {
     .project-card-image {
         height: 500px !important;
     }
+    //about us (max-width: 576px)
     #aboutUS-image {
         @include StandardLayout(90% !important, 550px !important, transparent);
         border-top-right-radius: 160px !important;
         border-bottom-left-radius: 60px !important;
     }
+    //counter (max-width: 576px)
     #Counter-container {
         @include FullScreenLayout(auto !important);
         #Counter {
@@ -1043,33 +779,6 @@ footer {
         #Counter div:nth-child(4) {
             display: block !important;
         }
-    }
-    #footer {
-        @include SetUpGridColumnLayout(
-            repeat(2, auto) !important,
-            60px !important
-        );
-    }
-    #footer div:nth-child(1) {
-        @include SetUpGridItemSpan(100%, span 2);
-    }
-    #footer div:nth-child(2) {
-        @include SetUpGridItemSpan(100%, span 1);
-    }
-    #footer div:nth-child(3) {
-        @include SetUpGridItemSpan(100%, span 1);
-    }
-    #footer div:nth-child(4) {
-        @include SetUpGridItemSpan(100%, span 2);
-    }
-    .content-link-list {
-        @include SetUpFlexLayout(
-            column,
-            nowrap,
-            25px !important,
-            flex-start,
-            flex-start
-        );
     }
 }
 //-------------------------------------ANIMATION-----------------------------------------
@@ -1111,22 +820,22 @@ footer {
     animation: slipToTop-200 0.5s ease-out forwards paused;
 }
 //project
-#project-header{
+#project-header {
     animation: slipToBottom-100 0.5s ease-out both paused;
 }
-#project-content{
+#project-content {
     animation: slipToTop-200 0.5s ease-out both paused;
 }
-// blog 
-#Blog-header{
+// blog
+#Blog-header {
     animation: slipToBottom-100 0.5s ease-out both paused;
     animation-delay: 0.2s;
 }
-#Blog-list > .Blog-card:nth-child(2n){
-    animation: slipToTop-200 0.5s ease-out both paused; 
+#Blog-list > .Blog-card:nth-child(2n) {
+    animation: slipToTop-200 0.5s ease-out both paused;
     animation-delay: 0.4s;
 }
-#Blog-list > .Blog-card:nth-child(2n+1){
+#Blog-list > .Blog-card:nth-child(2n + 1) {
     animation: slipToTop-200 0.5s ease-out both paused;
     animation-delay: 0.7s;
 }

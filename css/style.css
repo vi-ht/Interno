@@ -1,21 +1,26 @@
 @font-face {
   font-family: DMSerif-r;
+  font-display: swap;
   src: url(../asset/font/DM_Serif_Display/DMSerifDisplay-Regular.ttf);
 }
 @font-face {
   font-family: Jost-regular;
+  font-display: swap;
   src: url(../asset/font/Jost/static/Jost-Regular.ttf);
 }
 @font-face {
   font-family: Jost-med;
+  font-display: swap;
   src: url(../asset/font/Jost/static/Jost-Medium.ttf);
 }
 @font-face {
   font-family: Jost-SemiBold;
+  font-display: swap;
   src: url(../asset/font/Jost/static/Jost-SemiBold.ttf);
 }
 @font-face {
   font-family: Jost-Bold;
+  font-display: swap;
   src: url(../asset/font/Jost/static/Jost-Bold.ttf);
 }
 #Contact-container #Contact button, #aboutUS-container #aboutUS #aboutUS-content button, #banner #main-banner #banner-content button {
@@ -82,7 +87,7 @@
   letter-spacing: 2%;
 }
 
-footer #footer .footer-content .content-title, #Blog-container #Blog #Blog-inner #Blog-list .Blog-card .Blog-card-container .Blog-card-title, #project-container #project #project-inner #project-content .project-card .project-card-info .project-card-header .project-card-name {
+#Blog-container #Blog #Blog-inner #Blog-list .Blog-card .Blog-card-container .Blog-card-title, #project-container #project #project-inner #project-content .project-card .project-card-info .project-card-header .project-card-name {
   font-family: DMSerif-r;
   font-size: 25px;
   line-height: 125%;
@@ -96,7 +101,7 @@ footer #footer .footer-content .content-title, #Blog-container #Blog #Blog-inner
   letter-spacing: 2%;
 }
 
-footer #copyright, footer #footer .footer-content .content-link-list .content-link, footer #footer .footer-content #footer-slogan, #Contact-container #Contact #Contact-content #Contact-des, #Blog-container #Blog #Blog-inner #Blog-header .Blog-header-description, #Counter-container #Counter .Counter-item .Counter-title, #project-container #project #project-inner #project-content .project-card .project-card-info .project-card-header .project-card-type, #project-container #project #project-inner #project-header #project-header-description, #Testimonial-container #Testimonial #Testimonial-card-list .Testimonial-card .Testimonial-Content, #Testimonial-container #Testimonial #Testimonial-card-list .Testimonial-card .Testimonial-header .Testimonial-info .Testimonial-address, #aboutUS-container #aboutUS #aboutUS-content #content-des {
+#Contact-container #Contact #Contact-content #Contact-des, #Blog-container #Blog #Blog-inner #Blog-header .Blog-header-description, #Counter-container #Counter .Counter-item .Counter-title, #project-container #project #project-inner #project-content .project-card .project-card-info .project-card-header .project-card-type, #project-container #project #project-inner #project-header #project-header-description, #Testimonial-container #Testimonial #Testimonial-card-list .Testimonial-card .Testimonial-Content, #Testimonial-container #Testimonial #Testimonial-card-list .Testimonial-card .Testimonial-header .Testimonial-info .Testimonial-address, #aboutUS-container #aboutUS #aboutUS-content #content-des {
   font-family: Jost-regular;
   font-size: 22px;
   line-height: 150%;
@@ -179,189 +184,28 @@ footer #copyright, footer #footer .footer-content .content-link-list .content-li
     opacity: 1;
   }
 }
+@keyframes slipToTop-100 {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes white-to-yellow {
+  0% {
+    background-color: white;
+  }
+  100% {
+    background-color: #F4F0EC;
+  }
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-#slidebar-container {
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw !important;
-  background-color: transparent !important;
-  position: absolute;
-  z-index: 1000;
-  top: 0;
-  right: 0;
-  display: none;
-}
-#slidebar-container #slidebar-background {
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-}
-#slidebar-container #slide-bar {
-  width: 370px;
-  height: 100vh;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  z-index: 1010;
-  top: 0;
-  right: -370px;
-  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.1);
-}
-#slidebar-container #slide-bar #slidebar-nav {
-  width: 90%;
-  height: 94%;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  gap: 10px;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-#slidebar-container #slide-bar #slidebar-nav .slidebar-title {
-  width: 100%;
-  height: auto;
-  background-color: white;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  gap: 25px;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-}
-#slidebar-container #slide-bar #slidebar-nav .slidebar-title img {
-  width: 150px;
-  height: auto;
-}
-#slidebar-container #slide-bar #slidebar-nav .slidebar-title #close-button {
-  padding: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-#slidebar-container #slide-bar #slidebar-nav .slidebar-title #close-button iconify-icon {
-  cursor: pointer;
-  transition: color 0.3s;
-}
-#slidebar-container #slide-bar #slidebar-nav .slidebar-title #close-button iconify-icon:hover {
-  color: #CDA274;
-}
-#slidebar-container #slide-bar #slidebar-nav .slidebar-line {
-  width: 100%;
-  height: 1px;
-  background-color: #4D5053;
-  margin-bottom: 10px;
-  opacity: 0.5;
-}
-#slidebar-container #slide-bar #slidebar-nav .slidebar-item {
-  width: 100%;
-  height: auto;
-  background-color: white;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  gap: 25px;
-  justify-content: flex-start;
-  align-items: center;
-  transition: all 0.5 ease-out;
-  padding: 12px 18px;
-  border-radius: 10px;
-}
-#slidebar-container #slide-bar #slidebar-nav .slidebar-item a {
-  text-decoration: none;
-  color: #292F36;
-  font-size: 20px;
-  font-family: Jost-regular;
-}
-#slidebar-container #slide-bar #slidebar-nav .slidebar-item iconify-icon {
-  color: #292F36;
-}
-#slidebar-container #slide-bar #slidebar-nav .slidebar-item.active {
-  background-color: #CDA274;
-}
-#slidebar-container #slide-bar #slidebar-nav .slidebar-item.active a {
-  color: #F4F0EC;
-  font-family: Jost-med;
-}
-#slidebar-container #slide-bar #slidebar-nav .slidebar-item.active iconify-icon {
-  color: #F4F0EC;
-}
-#slidebar-container #slide-bar #slidebar-nav .slidebar-item:hover {
-  background-color: #F4F0EC;
-}
-#slidebar-container #slide-bar #slidebar-nav .slidebar-item:hover a {
-  color: #292F36;
-}
-#slidebar-container #slide-bar #slidebar-nav .slidebar-item:hover iconify-icon {
-  color: #292F36;
-}
-
-header {
-  width: 100%;
-  height: 138px;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 43px;
-  padding-bottom: 43px;
-  background-color: white;
-  transition: height 200ms;
-}
-header #navbar-container {
-  width: 1200px;
-  height: 50px;
-  background-color: transparent;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  gap: 0;
-  justify-content: space-between;
-  align-items: center;
-}
-header #navbar-container #max-nav {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  gap: 40px;
-  justify-content: flex-end;
-  align-items: center;
-}
-header #navbar-container #max-nav .nav-link {
-  text-decoration: none;
-  color: #292F36;
-  font-size: 20px;
-  font-family: Jost-regular;
-  transition: all 0.5s;
-}
-header #navbar-container #max-nav a:last-child {
-  position: relative;
-  top: 3px;
-}
-header #navbar-container #max-nav .nav-link.active {
-  font-family: Jost-med;
-}
-header #navbar-container #max-nav .nav-link:hover {
-  text-decoration: underline #CDA274 4px;
-}
-header #navbar-container #min-nav {
-  display: none;
-}
-header #navbar-container #min-nav a iconify-icon {
-  color: #292F36;
 }
 
 #banner {
@@ -437,12 +281,14 @@ header #navbar-container #min-nav a iconify-icon {
   font-family: DMSerif-r;
   font-size: 25px;
   margin-bottom: 20px;
+  text-align: center;
 }
 #work #work-container div.work-des {
   font-family: Jost-regular;
   line-height: 150%;
   font-size: 22px;
   margin-bottom: 48px;
+  text-align: center;
 }
 #work #work-container div.work-read-more {
   cursor: pointer;
@@ -1012,87 +858,7 @@ header #navbar-container #min-nav a iconify-icon {
 #Contact-container #Contact button span iconify-icon {
   color: #292F36;
 }
-footer {
-  width: 100%;
-  height: 577px;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 46px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  gap: 134px;
-  justify-content: space-between;
-  align-items: center;
-}
-footer #footer {
-  width: 1200px;
-  height: 100%;
-  background-color: transparent;
-  display: grid;
-  gap: 101px;
-  grid-template-columns: 393px 125px 120px 258px;
-}
-footer #footer .footer-content {
-  width: 100%;
-  grid-column: span 1;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  gap: 33px;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-footer #footer .footer-content #footer-slogan {
-  color: #4D5053;
-  word-break: keep-all !important;
-}
-footer #footer .footer-content #footer-social {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  gap: 54px;
-  justify-content: flex-start;
-  align-items: center;
-}
-footer #footer .footer-content .content-link-list {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  gap: 41px;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-footer #footer .footer-content .content-link-list .content-link {
-  letter-spacing: 1%;
-  color: #4D5053;
-}
-footer #copyright {
-  width: 1200px;
-  height: 100%;
-  background-color: transparent;
-  color: #4D5053;
-  text-align: center;
-}
-
 @media screen and (max-width: 1200px) and (min-width: 0px) {
-  header {
-    width: 100%;
-    height: auto !important;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 20px !important;
-    padding-bottom: 20px !important;
-  }
-  header #navbar-container {
-    width: 90% !important;
-    height: 50px;
-    background-color: transparent;
-  }
   #main-banner {
     width: 90% !important;
     height: auto;
@@ -1190,40 +956,8 @@ footer #copyright {
     height: 100%;
     background-color: #292F36;
   }
-  footer {
-    width: 100%;
-    height: auto !important;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    gap: 50px !important;
-    justify-content: space-between;
-    align-items: center;
-  }
-  footer #footer,
-  footer #copyright {
-    width: 90% !important;
-    height: 100%;
-    background-color: transparent;
-  }
 }
 @media screen and (max-width: 992px) and (min-width: 0px) {
-  #max-nav {
-    display: none !important;
-  }
-  #min-nav {
-    display: flex !important;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 40px;
-    justify-content: flex-end;
-    align-items: center;
-  }
   #banner {
     height: calc(100vh - 90px) !important;
   }
@@ -1236,27 +970,6 @@ footer #copyright {
     gap: 80px !important;
     justify-content: center !important;
     align-items: center;
-  }
-  #footer {
-    display: grid;
-    gap: 60px !important;
-    grid-template-columns: repeat(11, auto) !important;
-  }
-  #footer div:nth-child(1) {
-    width: 100%;
-    grid-column: span 4;
-  }
-  #footer div:nth-child(2) {
-    width: 100%;
-    grid-column: span 2;
-  }
-  #footer div:nth-child(3) {
-    width: 100%;
-    grid-column: span 2;
-  }
-  #footer div:nth-child(4) {
-    width: 100%;
-    grid-column: span 3;
   }
 }
 @media screen and (max-width: 992px) {
@@ -1374,27 +1087,6 @@ footer #copyright {
     object-fit: cover;
     object-position: 50% 50% !important;
   }
-  #footer {
-    display: grid;
-    gap: 60px !important;
-    grid-template-columns: repeat(12, auto) !important;
-  }
-  #footer div:nth-child(1) {
-    width: 100%;
-    grid-column: span 12;
-  }
-  #footer div:nth-child(2) {
-    width: 100%;
-    grid-column: span 3;
-  }
-  #footer div:nth-child(3) {
-    width: 100%;
-    grid-column: span 3;
-  }
-  #footer div:nth-child(4) {
-    width: 100%;
-    grid-column: span 6;
-  }
 }
 @media screen and (max-width: 768px) {
   #project-content {
@@ -1403,43 +1095,8 @@ footer #copyright {
     grid-template-columns: repeat(1, 1fr) !important;
     grid-template-rows: repeat(4, auto);
   }
-  #footer {
-    display: grid !important;
-    display: grid;
-    gap: 100px !important;
-    grid-template-columns: repeat(3, auto) !important;
-  }
-  #footer div:nth-child(1) {
-    width: 100%;
-    grid-column: span 3;
-  }
-  #footer div:nth-child(2) {
-    width: 100%;
-    grid-column: span 1;
-  }
-  #footer div:nth-child(3) {
-    width: 100%;
-    grid-column: span 1;
-  }
-  #footer div:nth-child(4) {
-    width: 100%;
-    grid-column: span 3;
-  }
-  .content-link-list {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    gap: 30px !important;
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
 }
 @media screen and (max-width: 576px) {
-  #slide-bar {
-    width: 100% !important;
-    height: 100vh;
-    background-color: white;
-  }
   #banner {
     width: 100%;
     height: 1042px;
@@ -1447,7 +1104,7 @@ footer #copyright {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(../asset/image/Image.webp);
+    background-image: url(../asset/image/image_optimized.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
@@ -1496,35 +1153,6 @@ footer #copyright {
   }
   #Counter-container #Counter div:nth-child(4) {
     display: block !important;
-  }
-  #footer {
-    display: grid;
-    gap: 60px !important;
-    grid-template-columns: repeat(2, auto) !important;
-  }
-  #footer div:nth-child(1) {
-    width: 100%;
-    grid-column: span 2;
-  }
-  #footer div:nth-child(2) {
-    width: 100%;
-    grid-column: span 1;
-  }
-  #footer div:nth-child(3) {
-    width: 100%;
-    grid-column: span 1;
-  }
-  #footer div:nth-child(4) {
-    width: 100%;
-    grid-column: span 2;
-  }
-  .content-link-list {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    gap: 25px !important;
-    justify-content: flex-start;
-    align-items: flex-start;
   }
 }
 #banner-content {

@@ -1,0 +1,405 @@
+@import "variable.scss";
+@import "layout.scss";
+@import "font.scss";
+@import "component.scss";
+@import "scrollbar.scss";
+@import "keyframe.scss";
+
+* {
+    @include ResetCSS;
+}
+
+//.banner
+#banner {
+    @include ImageFullScreenLayout(
+        url(../asset/image/service-page/Banner.webp),
+        356px
+    );
+    #banner-container {
+        @include StandardLayout($normal-width, 100%, transparent);
+        @include CenterLayout();
+        position: relative; //$DMSerif-r
+        #banner-content {
+            @include StandardLayout(503px, 178px, $neutral-color-white);
+            border-top-left-radius: 37px;
+            border-top-right-radius: 37px;
+            padding: 41px 158px;
+            position: absolute;
+            bottom: 0;
+            text-align: center;
+            transition: all 0.5s ease-in-out;
+            #banner-title {
+                @extend %heading01;
+                font-weight: normal;
+                text-align: inherit;
+                padding: 0;
+            }
+            #banner-breadcrumbs {
+                @include SetUpFlexLayout(row, nowrap, 5px, center, center);
+                color: $neutral-color-gray;
+                a,
+                div {
+                    @extend %regular-text;
+                    text-decoration: none;
+                    color: inherit;
+                    transition: all 0.3s ease;
+                }
+                a:hover {
+                    color: $primary-color-med;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+//.work
+#work {
+    @include FullScreenLayout(auto);
+    @include CenterLayout;
+    #work-container {
+        margin: 200px 0px;
+        @include StandardLayout($normal-width, auto, transparent);
+        @include SetUpGridColumnLayout(repeat(6, 1fr), 88px 0px);
+        justify-content: center;
+        align-items: center;
+        div {
+            @include SetUpGridItemSpan(100%, span 2);
+            padding: 0px 26px;
+        }
+        div.work-name {
+            font-family: $DMSerif-r;
+            font-size: 25px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        div.work-des {
+            font-family: $Jost-regular;
+            line-height: 150%;
+            font-size: 22px;
+            margin-bottom: 48px;
+            text-align: center;
+            // padding: 0px 10px;
+        }
+        div.work-read-more {
+            cursor: pointer;
+            transition: all 0.3s ease-in;
+            @include CenterLayout;
+            @include SetUpFlexLayout(row, nowrap, 8px, center, center);
+            font-family: $Jost-SemiBold;
+            font-size: 18px;
+            span:nth-child(2) {
+                color: $primary-color-med;
+                @include CenterLayout;
+                transition: inherit;
+                iconify-icon {
+                    transition: inherit;
+                }
+            }
+        }
+        div.work-read-more:hover {
+            color: $primary-color-med;
+            span:nth-child(2) {
+                iconify-icon {
+                    transform: translateX(15px);
+                    color: $primary-color-dark;
+                }
+            }
+        }
+    }
+    #work-container > div:nth-child(5) {
+        // background-color: $primary-color-light;
+        padding: 83px 26px;
+        border-radius: 30px;
+    }
+}
+
+//.how-we-work
+#how-we-work {
+    @include FullScreenLayout(auto);
+    margin-bottom: 200px;
+    #hww-container {
+        @include StandardLayout($normal-width, auto, $primary-color-light);
+        @include CenterLayout-vertical;
+        gap: 100px;
+        padding: 160px 116px;
+        border-radius: 70px;
+        #hww-header {
+            text-align: center;
+            @include CenterLayout-vertical;
+            gap: 10px;
+            #hww-header-title {
+                @extend %heading01;
+                font-weight: normal;
+                text-align: inherit;
+            }
+            #hww-header-des {
+                @extend %regular-text;
+                text-align: inherit;
+                max-width: 780px;
+            }
+        }
+        #hww-list {
+            @include SetUpFlexLayout(column, nowrap, 70px, center, stretch);
+            .hww-line {
+                display: none;
+            }
+            .hww-step-container {
+                @include SetUpGridColumnLayout(repeat(2, 1fr), 0 51px);
+                transition: all 0.5s ease-in-out;
+                .hww-step-img {
+                    @include SetUpGridItemSpan(100%, span 1);
+                    @include StandardLayoutHidden(100%, 486px, transparent);
+                    transition: inherit;
+                    img {
+                        @include SetUpImageContainer(100%, 100%, 70% 0%);
+                        border-top-right-radius: 123px;
+                        border-bottom-left-radius: 326px;
+                        transition: inherit;
+                    }
+                }
+                .hww-step-main {
+                    @include SetUpGridItemSpan(100%, span 1);
+                    @include CenterLayout-vertical;
+                    .hww-step-main-container {
+                        .hww-step-visual {
+                            @include SetUpFlexLayout(
+                                row,
+                                nowrap,
+                                0px,
+                                space-between,
+                                center
+                            );
+                            margin-bottom: 58px;
+                            .hww-step-no {
+                                @extend %heading01-120;
+                                line-height: 90%;
+                                color: $neutral-color-white;
+                            }
+                        }
+                        .hww-step-content {
+                            .hww-step-title {
+                                @extend %heading03;
+                                font-weight: normal;
+                                font-size: 35px;
+                                margin-bottom: 10px;
+                            }
+                            .hww-step-des {
+                                @extend %regular-text;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//.contact
+#Contact-container {
+    @include FullScreenLayout(374px);
+    margin-bottom: 200px;
+    #Contact {
+        @include StandardLayout($normal-width, 100%, $primary-color-dark);
+        border-radius: 70px;
+        @include CenterLayout-vertical;
+        gap: 32px;
+        #Contact-content {
+            @include CenterLayout-vertical;
+            gap: 11px;
+            #Contact-title {
+                @extend %heading01;
+                color: $neutral-color-white;
+                text-align: center;
+            }
+            #Contact-des {
+                @extend %regular-text;
+                color: $neutral-color-white;
+                text-align: center;
+            }
+        }
+        button {
+            @extend %button;
+            background-color: $primary-color-med;
+            color: white;
+            span {
+                iconify-icon {
+                    color: $primary-color-dark;
+                }
+            }
+            box-shadow: 0px 10px 20px 0px #1f2022;
+        }
+        button:hover {
+            @extend %button-hover-light;
+        }
+    }
+}
+
+//-------------------------------------------responsive-----------------------------------------------
+//.all device from 0 to 1200px
+@media screen and (max-width: 1200px) and (min-width: 0px) {
+    //work
+    #work-container,
+    #hww-container {
+        @include StandardLayout($width, 100%, transparent);
+    }
+    #work-container div {
+        padding: 0px 15px !important;
+    }
+    #work-container div:nth-child(5) {
+        padding: 83px 15px !important;
+    }
+    //contact (max-width: 1200px) and (min-width: 0px)
+    #Contact-container {
+        @include FullScreenLayout(auto !important);
+        #Contact {
+            padding: 80px 10px;
+            @include StandardLayout($width, 100%, $primary-color-dark);
+        }
+    }
+}
+//.all device from 0 to 992px
+@media screen and (max-width: 992px) and (min-width: 0px) {
+}
+//.all device from 993 to 1200px
+@media screen and (max-width: 1200px) and (min-width: 993px) {
+    //how-we-work
+    #hww-container {
+        padding: 150px 80px !important;
+    }
+    .hww-step-container {
+        .hww-step-img {
+            // @include SetUpGridItemSpan(100%, span 1);
+            // @include StandardLayoutHidden(100%, 486px, pink);
+            padding: 0 !important;
+            img {
+                border-top-right-radius: 50px !important;
+                border-bottom-left-radius: 250px !important;
+            }
+        }
+    }
+}
+//.all device from 769 to 992px
+@media screen and (max-width: 992px) {
+    //work (max-width: 992px) and (min-width: 769px)
+    #work-container > div {
+        @include SetUpGridItemSpan(100%, span 3 !important);
+    }
+    //banner
+    #banner-content {
+        @include StandardLayout(400px !important, 178px, $neutral-color-white);
+        padding: 41px 20px !important;
+    }
+    //how-we-work
+    #hww-container {
+        padding: 120px 50px !important;
+    }
+    .hww-step-container {
+        .hww-step-img {
+            img {
+                border-top-right-radius: 40px !important;
+                border-bottom-left-radius: 180px !important;
+            }
+        }
+    }
+}
+//.all device from 577 to 768px
+@media screen and (max-width: 768px) {
+    #work-container > div {
+        @include SetUpGridItemSpan(100%, span 6 !important);
+    }
+    div.work-des {
+        padding: 0 50px !important;
+    }
+    //how-we-work
+    #hww-container {
+        padding: 120px 50px !important;
+    }
+    .hww-step-visual {
+        margin-bottom: 30px !important;
+    }
+    .hww-step-container {
+        @include SetUpGridColumnLayout(repeat(2, 1fr), 20px 50px !important);
+        .hww-step-img {
+            @include SetUpGridItemSpan(100%, span 2 !important);
+            img {
+                border-top-right-radius: 123px !important;
+                border-bottom-left-radius: 326px !important;
+            }
+            margin-bottom: 20px;
+        }
+        .hww-step-main {
+            @include SetUpGridItemSpan(100%, span 2 !important);
+            margin-bottom: 20px;
+        }
+    }
+    .hww-line {
+        display: block !important;
+        @include StandardLayout(100%, 0.5px, $neutral-color-gray);
+        opacity: 0.5;
+    }
+}
+//.all device from 0 to 576px
+@media screen and (max-width: 576px) {
+    #work-container > div {
+        @include SetUpGridItemSpan(100%, span 6 !important);
+    }
+    //banner
+    #banner-content {
+        @include StandardLayout(290px !important, 178px, $neutral-color-white);
+        padding: 41px 20px !important;
+    }
+    //how-we-work
+    #hww-container {
+        padding: 100px 26px !important;
+    }
+    .hww-step-container {
+        .hww-step-img {
+            img {
+                border-top-right-radius: 50px !important;
+                border-bottom-left-radius: 220px !important;
+            }
+        }
+    }
+}
+//-----------------------------------------------Animate-------------------------------------------------
+//banner
+#banner-title {
+    animation: slipToTop-100 0.7s ease 0s both;
+}
+#banner-breadcrumbs {
+    animation: slipToBottom-100 0.7s ease 0s both;
+}
+//work
+#work-container > div:nth-child(2n + 1) {
+    animation: slipToTop-200 0.7s ease 0.3s both;
+}
+#work-container > div:nth-child(2n) {
+    animation: slipToTop-200 0.7s ease 0s both;
+}
+#work-container > div:nth-child(5) {
+    animation: white-to-yellow 0.5s ease-in-out both paused;
+}
+
+//how-we-work
+#hww-header-title {
+    animation: slipToTop-100 0.7s ease 0.2s both paused;
+}
+#hww-header-des {
+    animation: slipToBottom-100 0.7s ease 0.2s both paused;
+}
+.hww-step-img{ 
+    animation: slipToLeft-100 0.7s ease 0.2s both paused;
+}
+.hww-step-main{
+    animation: slipToRight-100 0.7s ease 0.2s both paused;
+}
+.hww-step-no{
+    animation: slipToBottom-100 0.5s ease-in 0.7s both paused;
+}
+#Contact-content{
+    animation: slipToBottom-100 0.5s ease-in both paused;
+}
+#Contact>button{
+    animation: slipToTop-100 0.5s ease both paused;
+}
